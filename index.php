@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
 <?php
 include_once('./includes/dbh.inc.php');
 include_once('./Style and cleanup/Table.html');
