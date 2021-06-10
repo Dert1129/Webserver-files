@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="./mystyle_Example.css">
+    </head>
+    <style>
+        .button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  div.center {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+    </style>
+    <body>
+        <p>
+            This is a testing place, please place test things below:
+        </p>
+        <h2>
+            CSS Buttons
+        </h2>
+        <button>
+            <a href="#" class="button">First Button</a>
+        </button>
+        <script>
+            function show_image(src, width, height, alt) {
+                var img = document.createElement("img");
+                img.src = src;
+                img.width = width;
+                img.height = height;
+                img.alt = alt;
+
+                // This next line will just add it to the <body> tag
+                document.body.appendChild(img);
+            }
+        </script>
+        <img src="https://media-exp1.licdn.com/dms/image/C560BAQEfSnIJqF8_SA/company-logo_200_200/0/1519908773893?e=2159024400&v=beta&t=jX4Tt4631cZFoSMjbeKoXxaQzpd91fIM9SEoHV5QbhU", alt="Technique inc Logo">
+        <a>
+            <div class="fixed">
+                <img src="https://miro.medium.com/max/1024/1*OohqW5DGh9CQS4hLY5FXzA.png" width="1024" height="544" alt="Hello world in fixed position">
+            </div>
+        </a>
+        <div class="relative">
+            This div element has position reletive
+        </div>
+        </div>
+    </body>
+</html>
