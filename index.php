@@ -2,14 +2,14 @@
 include_once('./includes/dbh.inc.php');
 include_once('./Style and cleanup/Table.html');
 include_once('./Style and cleanup/Navigation.html');
-include_once('./Style and cleanup/Pictures.html');
-include_once('./Style and cleanup/Image loop.php');
-$sql = "SELECT * FROM Job_Schedule_Details;";
+include_once('./Style and cleanup/Pictures.php');
+/*include_once('./Style and cleanup/Image loop.php');*/
+$sql = "SELECT * FROM Job_Schedule_Details ORDER BY  Customer;";
 
 if(($result = sqlsrv_query($conn, $sql))!==false){
     while ($row = sqlsrv_fetch_array($result)){
         echo "<tr>";
-        echo loopImages();
+        displayImages();
         echo "<td>". $row['Technician']. "</td>";
         echo "<td>". $row['Job_number']. "</td>";
         echo "<td>". $row['Due_Date']. "</td>";
