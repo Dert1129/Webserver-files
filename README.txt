@@ -36,3 +36,12 @@ to download xampp:
 download/install php drivers for windows
 https://www.microsoft.com/en-us/download/confirmation.aspx?id=20098
 1. use default settings
+2. done.
+
+To launch server:
+    1. open xampp
+    2. click start
+    
+To view job table:
+    1. type ip address of machine into browser, followed by a colon and 8080 (ex: 127.0.0.1:8080)
+    
