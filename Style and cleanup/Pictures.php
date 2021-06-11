@@ -42,7 +42,7 @@
 		for($index=0; $index < $indexCount; $index++) {
 			$extension = substr($dirArray[$index], -3);
 			if (($extension == 'jpg') || ($extension == 'png')){ // list only jpgs
-				echo '<td><li><img src="images/' . $dirArray[$index] . '"width="250" height="100" alt="Image" /><span>' . $dirArray[$index] .  '</span>'. '</td>';
+				echo '<td><li><img src="images/' . $dirArray[$index] . '"width="170" height="112" alt="Image" /><span>' . $dirArray[$index] .  '</span>'. '</td>';
 			}	
 		}
 	}
