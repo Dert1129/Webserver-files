@@ -33,10 +33,14 @@ to download xampp:
             3. Ctl + F to search for "Listen"
             4. Change ip and port to whatever you want to.
 
-download/install php drivers for windows
+download/install php drivers for windows DOWNLOAD AFTER XAMPP 
 https://www.microsoft.com/en-us/download/confirmation.aspx?id=20098
-1. use default settings
-2. done.
+1. click browse to place drivers in
+2. find and open xampp folder
+3. open php folder
+4. click on ext folder
+5. click okay
+6. done
 
 To launch server:
     1. open xampp
