@@ -19,8 +19,9 @@
 
 	<?php
 	function displayImages(){
+		system('net use Z: "\\tiws07\dwg\Customer\2021" NcTech2021! /user:NATHANC /persistent:no');
 	// open this directory 
-	$myDirectory = opendir("images");
+	$myDirectory = opendir("Z:/Customer/2021/Ford/Quotes/29189/Thumbnail/");
 
 	// get each entry
 	while($entryName = readdir($myDirectory)) {
@@ -41,8 +42,9 @@
 		// loop through the array of files and print them all in a list
 		for($index=0; $index < $indexCount; $index++) {
 			$extension = substr($dirArray[$index], -3);
-			if (($extension == 'jpg') || ($extension == 'png')){ // list only jpgs
-				echo '<td><li><img src="images/' . $dirArray[$index] . '"width="170" height="112" alt="Image" /><span>' . $dirArray[$index] .  '</span>'. '</td>';
+			if (($extension == 'jpg') || ($extension == 'png')){
+				 echo '<td><li><img src="Z:/Customer/2021/Ford/Quotes/29189/Thumbnail/' . $dirArray[$index] . '"width="170" height="112" alt="Image" /><span>' . $dirArray[$index] .  '</span>'. '</td>';
+				
 			}	
 		}
 	}
