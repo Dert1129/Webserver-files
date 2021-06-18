@@ -11,6 +11,5 @@ CREATE TABLE Job_Schedule_Details(
 	Value money,
 	Profit money,
 	Product_Code varchar(50),
-	JSDID INT IDENTITY(1,1) PRIMARY KEY,
-	Images varchar (max)
+	JSDID INT IDENTITY(1,1) PRIMARY KEY
 );
