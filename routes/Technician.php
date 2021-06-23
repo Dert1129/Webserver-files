@@ -5,11 +5,12 @@ function SortTechnician(){
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
         while ($row = sqlsrv_fetch_array($result)){
+            $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             //echo "<td></td>";
             echo "<td class='col-2'>". '<img src="data:image/png;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
             echo "<td class='col-1'>". $row['Technician']. "</td>";
-            echo "<td class='col-1'> <a href=\"file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number']. "\"> " . $row['Job_number'] . " </a> </td>";
+            echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             echo "<td class='col-1'>". $row['Due_Date']. "</td>";
             echo "<td class='col-1'>". $row['Customer']. "</td>";
             echo "<td class='col-1'>". $row['Part_Number']. "</td>";
