@@ -54,7 +54,7 @@ function SortJob_number(){
                             <!--<th scope="col">JSDID</th> -->
                             <th class="col-2">Thumbnail</th>
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Technician.php">Technician</a></th>
-                            <th class="col-1"><a href="http://195.100.202.209:8080/routes/Job_number.php">Job Number</a></th>
+                            <th class="col-1">Job Number</th>
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Due_Date.php">Due Date</a></th>
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Customer.php">Customer</a></th>
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Part_number.php">Part Number</a></th>

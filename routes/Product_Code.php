@@ -61,7 +61,7 @@ function SortProduct_Code(){
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Part_Description.php">Part Description</a></th>
                             <th class="col-1"><a href="http://195.100.202.209:8080/routes/Customer_PO.php">Customer_PO</a></th>
                             <th class="col-1">Quantity</th>
-                            <th class="col-1"><a href="http://195.100.202.209:8080/routes/Product_Code.php">Product Code</a></th>
+                            <th class="col-1">Product Code</th>
                             
                         </tr>
                     </thead>

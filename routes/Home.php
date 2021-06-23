@@ -48,7 +48,7 @@ function Home(){
                 <table id="TableSchedule" class="table table-striped table-fixed">
                     <thead>
                         <tr>
-                            <th class="col-1"><a href="http://195.100.202.209:8080">Home</a></th>
+                            <th class="col-1">Sort by...</th>
                         </tr>
                         <tr>
                             <!--<th scope="col">JSDID</th> -->
