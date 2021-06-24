@@ -5,19 +5,57 @@ function SortPart_Description(){
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
         while ($row = sqlsrv_fetch_array($result)){
+            $date = date_format($row['Due_Date'], "m-j-y");
+            $current_date = date("m-j-y");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             //echo "<td></td>";
             echo "<td class='col-2'>". '<img src="data:image/png;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
-            echo "<td class='col-1'>". $row['Technician']. "</td>";
-            echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            echo "<td class='col-1'>". $row['Due_Date']. "</td>";
-            echo "<td class='col-1'>". $row['Customer']. "</td>";
-            echo "<td class='col-1'>". $row['Part_Number']. "</td>";
-            echo "<td class='col-1'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-            echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
-            echo "<td class='col-1'>". $row['Qty']. "</td>";
-            echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Technician']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Job_number']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Job_number']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $date. "</td>";
+            }else{
+                echo "<td class='col-1'>". $date. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Customer']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Customer']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Part_Number']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Part_Number']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+            }else{
+                echo "<td class='col-1'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Customer_PO']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Qty']. "</td>";
+            }else{
+                echo "<td class='col-1'>". $row['Qty']. "</td>";
+            }
+            if($date <= $current_date){
+                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+            }else{
+                echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+            }
             }
     }else{
         die(print_r(sqlsrv_errors(), true)); //if the if statement fails, issue errors accordingly
