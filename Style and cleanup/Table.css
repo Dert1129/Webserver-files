@@ -27,6 +27,7 @@ table {
   border-collapse: collapse; 
 }
 .table-fixed thead{
+    padding: 15px;
     width: 97%;
     overflow: hidden;
 }
