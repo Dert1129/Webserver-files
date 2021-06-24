@@ -1,13 +1,18 @@
 <?php
-function displayImages(){
-	// Enter your Directry/Folder Name I have Given Folder Name As Images
-	$directory = './Thumbnails';
-	$images   = scandir($directory);
-	foreach ($images as $image) {		 
-		//Give Image source -- src='folder-name/$file'
-		echo "<img src='Thumbnails/$image' class='img-fluid img-thumbnail' alt='image'/>";
+	function Insert_All_Images(){
+		include_once('../includes/dbh.inc.php');
+		$sql = "UPDATE PHP_Connect
+		SET Thumbnail = 
+			(SELECT  BulkColumn FROM OPENROWSET(BULK  N'Thumbnails/11.54.022.706.046 D-00.png', SINGLE_BLOB) AS Thumbnail);";
+
+		if(($result = sqlsrv_query($conn, $sql))!==false){
+			while($row = sqlsrv_fetch_array($result)){
+				echo $row['name'];
+				echo $row['ID'];
+			}
+		}else{
+			die(print_r(sqlsrv_errors(), true));
+		}
 	}
-
-}
-
+Insert_All_Images();
 ?>
