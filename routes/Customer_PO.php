@@ -17,9 +17,9 @@ function SortCustomer_PO(){
                 echo "<td class='col-1'>". $row['Technician']. "</td>";
             }
             if($date <= $current_date){
-                echo "<td class='col-1 text-danger'>". $row['Job_number']. "</td>";
+                echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }else{
-                echo "<td class='col-1'>". $row['Job_number']. "</td>";
+                echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }
             if($date <= $current_date){
                 echo "<td class='col-1 text-danger'>". $date. "</td>";
