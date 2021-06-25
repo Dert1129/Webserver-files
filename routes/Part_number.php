@@ -1,6 +1,6 @@
 <?php
 function SortPart_Number(){
-    include('../includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $sql = "SELECT * FROM Job_Schedule ORDER BY Part_Number;";
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
@@ -108,7 +108,7 @@ function SortPart_Number(){
                         <tr>
                         <td class="w-25">
                         <?php
-                            include_once("../includes/dbh.inc.php");
+                            require("../includes/dbh.inc.php");
                             SortPart_Number();
                         ?>
                         </tr>

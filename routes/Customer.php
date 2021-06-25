@@ -1,6 +1,6 @@
 <?php
 function SortCustomer(){
-    include('../includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $sql = "SELECT * FROM Job_Schedule ORDER BY Customer;";
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
@@ -108,7 +108,7 @@ function SortCustomer(){
                         <tr>
                         <td class="w-25">
                         <?php
-                            include_once("../includes/dbh.inc.php");
+                            require("../includes/dbh.inc.php");
                             SortCustomer();
                         ?>
                         </tr>

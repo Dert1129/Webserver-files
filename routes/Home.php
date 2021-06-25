@@ -1,6 +1,6 @@
 <?php
 function Home(){
-    include('./includes/dbh.inc.php');
+    require('./includes/dbh.inc.php');
     $sql = "SELECT * FROM Job_Schedule;";
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
@@ -11,7 +11,7 @@ function Home(){
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             //echo "<td></td>";
-            echo "<td class='col-2'>". '<img src="data:image/png;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
+            echo "<td class='col-2'>". '<img src="data:image/jpg;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
             if($date <= $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
             }else{
@@ -109,7 +109,7 @@ function Home(){
                         <tr>
                         <td class="w-25">
                         <?php
-                            include_once("./includes/dbh.inc.php");
+                            require("./includes/dbh.inc.php");
                             Home();
                         ?>
                         </tr>

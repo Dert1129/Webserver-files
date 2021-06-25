@@ -1,6 +1,6 @@
 <?php
 function SortProduct_Code(){
-    include('../includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $sql = "SELECT * FROM Job_Schedule ORDER BY Product_Code;";
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
@@ -108,7 +108,7 @@ function SortProduct_Code(){
                         <tr>
                         <td class="w-25">
                         <?php
-                            include_once("../includes/dbh.inc.php");
+                            require("../includes/dbh.inc.php");
                             SortProduct_Code();
                         ?>
                         </tr>
