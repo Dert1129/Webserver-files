@@ -6,8 +6,8 @@ function Home(){
     if(($result = sqlsrv_query($conn, $sql))!==false){
         while ($row = sqlsrv_fetch_array($result)){
 
-            $date = date_format($row['Due_Date'], "m-j-y");
-            $current_date = date("m-j-y");
+            $date = date_format($row['Due_Date'], "Y-m-j");
+            $current_date = date("Y-m-j");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             //echo "<td></td>";
@@ -85,6 +85,7 @@ function Home(){
     <div class="container-fluid">
         <div class="table-responsive">
             <div class="table-wrapper">
+                <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
                 <table id="TableSchedule" class="table table-striped table-fixed">
                     <thead>
                         <tr>

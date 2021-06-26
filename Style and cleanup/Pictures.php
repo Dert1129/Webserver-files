@@ -1,18 +1,25 @@
 <?php
-	function Insert_All_Images(){
-		include_once('../includes/dbh.inc.php');
-		$sql = "UPDATE PHP_Connect
-		SET Thumbnail = 
-			(SELECT  BulkColumn FROM OPENROWSET(BULK  N'Thumbnails/11.54.022.706.046 D-00.png', SINGLE_BLOB) AS Thumbnail);";
-
-		if(($result = sqlsrv_query($conn, $sql))!==false){
-			while($row = sqlsrv_fetch_array($result)){
-				echo $row['name'];
-				echo $row['ID'];
-			}
-		}else{
-			die(print_r(sqlsrv_errors(), true));
-		}
-	}
-Insert_All_Images();
-?>
+function Update_Images(){
+ require("../includes/dbh.inc.php");
+ // Enter your Directry/Folder Name I have Given Folder Name As Images
+ $sql = "SELECT Part_Number FROM Job_Schedule;";
+ if(($result = sqlsrv_query($conn,$sql))!== false){
+   while($row = sqlsrv_fetch_array($result)){
+   $files = scandir('../Thumbnails/');
+   foreach ($files as $file) {
+     if ($file !== "." && $file !== "..") {
+       $name = strstr($file, '.png', TRUE);
+       if($row['Part_Number']==$name){
+         $sql = "UPDATE Job_Schedule
+         SET Thumbnail = 
+           (SELECT  BulkColumn FROM OPENROWSET(BULK  N'//tiws07/dwg/Mfg Mtg/Nathan/Webserver files/Thumbnails/$file', SINGLE_BLOB) AS Thumbnail)
+           WHERE Part_Number = '$name';";
+           sqlsrv_query($conn, $sql);
+           echo "Query Successfull!";
+          }
+        }
+      }
+    }
+  }
+}
+?>                           

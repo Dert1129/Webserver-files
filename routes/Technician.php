@@ -5,11 +5,10 @@ function SortTechnician(){
 
     if(($result = sqlsrv_query($conn, $sql))!==false){
         while ($row = sqlsrv_fetch_array($result)){
-            $date = date_format($row['Due_Date'], "m-j-y");
-            $current_date = date("m-j-y");
+            $date = date_format($row['Due_Date'], "Y-m-j");
+            $current_date = date("Y-m-j");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
-            //echo "<td></td>";
             echo "<td class='col-2'>". '<img src="data:image/png;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
             if($date <= $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
