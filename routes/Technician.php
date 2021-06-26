@@ -83,6 +83,7 @@ function SortTechnician(){
     <div class="container-fluid">
         <div class="table-responsive">
             <div class="table-wrapper">
+                <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
                 <table id="TableSchedule" class="table table-striped table-fixed">
                     <thead>
                         <tr>

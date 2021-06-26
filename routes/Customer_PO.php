@@ -85,6 +85,7 @@ function SortCustomer_PO(){
         <div class="table-responsive">
             <div class="table-wrapper">
                 <table id="TableSchedule" class="table table-striped table-fixed">
+                    <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
                     <thead>
                         <tr>
                             <th class="col-1"><a href="http://195.100.202.209:8080">Home</a></th>
