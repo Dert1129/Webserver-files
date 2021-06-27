@@ -12,9 +12,9 @@ function SortPart_Number(){
             //echo "<td></td>";
             echo "<td class='col-2'>". '<img src="data:image/png;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
             if($date <= $current_date){
-                echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
+                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
             }else{
-                echo "<td class='col-1'>". $row['Technician']. "</td>";
+                echo "<td class='col-1'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
             }
             if($date <= $current_date){
                 echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
