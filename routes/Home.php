@@ -1,17 +1,19 @@
 <?php
 function Home(){
     require('./includes/dbh.inc.php');
+    //include("./includes/mysqlconn.php");
     $sql = "SELECT * FROM Job_Schedule;";
+    $result = mysqli_query($conn, $sql);
 
-    if(($result = sqlsrv_query($conn, $sql))!==false){
-        while ($row = sqlsrv_fetch_array($result)){
+    if ($result !==false){
+        while ($row = mysqli_fetch_assoc($result)){
 
-            $date = date_format($row['Due_Date'], "Y-m-j");
+            $date = date_format(new DateTime($row["Due_Date"]), "Y-m-j");
             $current_date = date("Y-m-j");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             //echo "<td></td>";
-            echo "<td class='col-2'>". '<img src="data:image/jpg;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
+            echo "<td class='col-2'>". "<img src='http://127.0.0.1:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date <= $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
             }else{
@@ -59,9 +61,10 @@ function Home(){
             }
             
         }
-    }else{
-    die(print_r(sqlsrv_errors(), true)); //if the if statement fails, issue errors accordingly
+    }if(!$conn){
+        die("Connection failed: ". mysqli_connect_error());
     }
+    
 }
 ?>
 <!DOCTYPE html>
@@ -111,6 +114,7 @@ function Home(){
                         <td class="w-25">
                         <?php
                             require("./includes/dbh.inc.php");
+                            //require_once("./includes/mysqlconn.php");
                             Home();
                         ?>
                         </tr>
