@@ -1,6 +1,12 @@
 <?php
-//connect to database
-$serverName ="DESKTOP-88VUL4I";
-$connectionInfo = array("Database"=>"TECHNIQUEENT");
-$conn = sqlsrv_connect($serverName,$connectionInfo);
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if(!$conn){
+        die("Connection failed: ". mysqli_connect_error());
+    }  
 ?>

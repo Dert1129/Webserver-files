@@ -1,7 +1,7 @@
 <?php
 function SortCustomer_PO(){
     require('../includes/dbh.inc.php');
-    $sql = "SELECT * FROM Job_Schedule;";
+    $sql = "SELECT * FROM Job_Schedule ORDER BY Customer_PO;";
     $result = mysqli_query($conn, $sql);
 
     if ($result !==false){

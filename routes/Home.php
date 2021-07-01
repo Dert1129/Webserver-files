@@ -2,7 +2,7 @@
 function Home(){
     require('./includes/dbh.inc.php');
     //include("./includes/mysqlconn.php");
-    $sql = "SELECT * FROM Job_Schedule;";
+    $sql = "SELECT * FROM Job_Schedule ORDER BY JSDID;";
     $result = mysqli_query($conn, $sql);
 
     if ($result !==false){
