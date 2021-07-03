@@ -13,9 +13,7 @@ function Home(){
             $current_date = date("Y-m-j");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
-            //echo "<td></td>";
             echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-            //echo "<td class='col-2'>". '<img src="data:image/jpg;base64,' .base64_encode($row['Thumbnail']). '" width="170px" height="112px">'. "</td>";
             if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
             }else{
@@ -103,7 +101,6 @@ function Home(){
                             </div>
                         </tr>
                         <tr>
-                            <!--<th scope="col">JSDID</th> -->
                             <th class="col-2">Thumbnail</th>
                             <th class="col-1">Technician</a></th>
                             <th class="col-1">Job Number</a></th>
@@ -114,7 +111,6 @@ function Home(){
                             <th class="col-1">Customer_PO</a></th>
                             <th class="col-1">Quantity</th>
                             <th class="col-1">Product Code</a></th>
-<!--                            <th class="col-1"><a href="http://195.100.202.209:8080">Home</a></th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -123,7 +119,6 @@ function Home(){
                         <?php
                             require("./includes/dbh.inc.php");
                             require_once("./style and cleanup/pictures.php");
-                            //require_once("./includes/mysqlconn.php");
                             Home();
                         ?>
                         </tr>
