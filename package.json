@@ -1,0 +1,23 @@
+{
+  "name": "webserver-files",
+  "version": "1.0.0",
+  "description": "BEFORE RUNNING PROGRAM DOWNLOAD THESE AND FOLLOW INSTRUCTIONS\r to download xampp:\r     https://www.apachefriends.org/download.html\r         1. accept default settings.\r         2. install\r         BEFORE CHANGING PORT NUMBER AND IP, DO THIS FIRST\r             1. open xampp and click start.\r             2. type localhost:1433 into your browser\r             3. click on PHPInfo in navigation bar at top of site.\r             4. review PHP version and Architechture (ex. 86 or 64)\r             5. go to https://github.com/Microsoft/msphpsql/releases\r             6. scroll down to find OS and version number for php. (ex. \"Windows-7.3.zip\");\r             7. download zip\r             8. extract zip whereever you want.\r             9. open folder displaying OS and version\r             9. open archetechure version that was seen in step 4.\r             10. copy files php_pdo_sqlsrv_version_ts.dll and php_sqlsrv_73_ts.dll (ex. php_pdo_73_ts.dll, if i downloaded windows php version 7.3)\r             11. open drive xampp was installed in\r             12. open xampp. \r             13. open php folder>ext folder\r             14. paste files inside of ext folder\r             15. open xampp\r             16. click on config in the Apace module. A drop down will open, click PHP(php.ini)\r             17. this should open a notepad text file. Ctrl + F to search for \"extention=\"\r             18. click enter until you see a list of extenstions\r             19. in the list of extenstions, type \"extension=php_pdo_sqlsrv_73_ts\" The php_ should be the EXACT same name as the .dll files you copy and pasted earlier\r             20. repeat step 19 for the second .dll file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dert1129/Webserver-files.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dert1129/Webserver-files/issues"
+  },
+  "homepage": "https://github.com/Dert1129/Webserver-files#readme",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "tablesorter": "^2.31.3"
+  }
+}

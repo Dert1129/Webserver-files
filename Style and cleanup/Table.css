@@ -53,3 +53,30 @@ clear: both;
 .table-fixed thead > tr > th {
 float: left;
 }
+
+.search{
+    overflow: hidden;
+}
+
+.search a{
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
+    font-size: 17px;
+}
+
+.search a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav input[type=text] {
+float: right;
+padding: 6px;
+border: none;
+margin-top: 8px;
+margin-right: 16px;
+font-size: 17px;
+}
