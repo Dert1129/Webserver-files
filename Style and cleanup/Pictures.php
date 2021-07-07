@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if(!$conn){
-    die("Connection failed: ". mysqli_connect_error());
-}  
-// Enter your Directry/Folder Name I have Given Folder Name As Images
+include_once('./includes/dbh.inc.php');
 $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
 $stmt->execute();
 $result = $stmt->get_result();
