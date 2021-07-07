@@ -3,11 +3,12 @@ function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
     //include("./includes/mysqlconn.php");
-    $sql = "SELECT * FROM Job_Schedule;";
-    $result = mysqli_query($conn, $sql);
+    $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result !==false){
-        while ($row = mysqli_fetch_assoc($result)){
+        while ($row = $result->fetch_assoc()){
 
             $date = date_format(new DateTime($row["Due_Date"]), "Y-m-j");
             $current_date = date("Y-m-j");
@@ -71,7 +72,7 @@ function Home(){
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 <title>All Job Information</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -100,18 +101,21 @@ function Home(){
                                 </div>
                             </div>
                         </tr>
-                        <tr>
-                            <th class="col-2">Thumbnail</th>
-                            <th class="col-1">Technician</a></th>
-                            <th class="col-1">Job Number</a></th>
-                            <th class="col-1">Due Date</a></th>
-                            <th class="col-1">Customer</a></th>
-                            <th class="col-1">Part Number</a></th>
-                            <th class="col-1">Part Description</a></th>
-                            <th class="col-1">Customer_PO</a></th>
-                            <th class="col-1">Quantity</th>
-                            <th class="col-1">Product Code</a></th>
-                        </tr>
+                        <div style="overflow-x: auto;">
+                            <tr id="Headers">
+                                <label for="Headers" class="mx-auto">Click on table headers to sort</label>
+                                <th class="col-2">Thumbnail</th>
+                                <th class="col-1">Technician</a></th>
+                                <th class="col-1">Job Number</a></th>
+                                <th class="col-1">Due Date</a></th>
+                                <th class="col-1">Customer</a></th>
+                                <th class="col-1">Part Number</a></th>
+                                <th class="col-1">Part Description</a></th>
+                                <th class="col-1">Customer_PO</a></th>
+                                <th class="col-1">Quantity</th>
+                                <th class="col-1">Product Code</a></th>
+                            </tr>
+                        </div>
                     </thead>
                     <tbody>
                         <tr>
@@ -130,7 +134,7 @@ function Home(){
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
+    $("#sortTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
