@@ -10,8 +10,8 @@ function Home(){
     if ($result !==false){
         while ($row = $result->fetch_assoc()){
 
-            $date = date_format(new DateTime($row["Due_Date"]), "Y-m-j");
-            $current_date = date("Y-m-j");
+            $date = date_format(new DateTime($row["Due_Date"]), "Y-m-d");
+            $current_date = date("Y-m-d");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
             echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
