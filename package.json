@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Dert1129/Webserver-files#readme",
   "dependencies": {
+    "bootstrap-darkmode": "^0.8.0-beta.1",
     "jquery": "^3.6.0",
     "tablesorter": "^2.31.3"
   }
