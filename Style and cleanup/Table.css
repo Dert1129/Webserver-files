@@ -28,11 +28,11 @@ table {
 }
 .table-fixed thead{
     padding: 15px;
-    width: 97%;
+    width: 100%;
     overflow: hidden;
 }
 .table-fixed tbody {
-height: 800px;
+height: 600px;
 overflow-y: auto;
 width: 100%;
 }
@@ -40,7 +40,7 @@ width: 100%;
 .table-fixed tbody,
 .table-fixed tr,
 .table-fixed td,
-.table-fixed th {
+.table-fixed th{
 display: block;
 }
 .table-fixed tr:after {
@@ -50,33 +50,16 @@ visibility: hidden;
 clear: both;
 }
 .table-fixed tbody td,
-.table-fixed thead > tr > th {
+.table-fixed thead > tr > th{
 float: left;
 }
 
-.search{
-    overflow: hidden;
+.my-custom-scrollbar {
+    position: relative;
+    height: 1000px;
+    overflow: auto;
 }
 
-.search a{
-    float: right;
+.table-wrapper-scroll-y {
     display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration:none;
-    font-size: 17px;
-}
-
-.search a:hover{
-    background-color: #ddd;
-    color: black;
-}
-
-.topnav input[type=text] {
-float: right;
-padding: 6px;
-border: none;
-margin-top: 8px;
-margin-right: 16px;
-font-size: 17px;
 }
