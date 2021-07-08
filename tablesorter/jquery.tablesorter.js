@@ -41,7 +41,7 @@
 			// *** functionality
 			cancelSelection  : true,       // prevent text selection in the header
 			tabIndex         : true,       // add tabindex to header for keyboard accessibility
-			dateFormat       : 'mmddyyyy', // other options: 'ddmmyyy' or 'yyyymmdd'
+			dateFormat       : 'yyyymmdd', // other options: 'ddmmyyy' or 'yyyymmdd'
 			sortMultiSortKey : 'shiftKey', // key used to select additional columns
 			sortResetKey     : 'ctrlKey',  // key used to remove sorting on a column
 			usNumberFormat   : true,       // false for German '1.234.567,89' or French '1 234 567,89'
