@@ -16,48 +16,24 @@ function Home(){
             echo "<tr>";
             echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date < $current_date){
-                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-            }else{
-                echo "<td class='col-1'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-            }
-            if($date < $current_date){
+                echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
                 echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }else{
-                echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". $date. "</td>";
-            }else{
-                echo "<td class='col-1'>". $date. "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Customer']. "</td>";
-            }else{
-                echo "<td class='col-1'>". $row['Customer']. "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Part_Number']. "</td>";
-            }else{
-                echo "<td class='col-1'>". $row['Part_Number']. "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-            }else{
-                echo "<td class='col-1'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Customer_PO']. "</td>";
-            }else{
-                echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". $row['Qty']. "</td>";
-            }else{
-                echo "<td class='col-1'>". $row['Qty']. "</td>";
-            }
-            if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }else{
+                echo "<td class='col-1'>". $row['Technician']. "</td>";
+                echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                echo "<td class='col-1'>". $date. "</td>";
+                echo "<td class='col-1'>". $row['Customer']. "</td>";
+                echo "<td class='col-1'>". $row['Part_Number']. "</td>";
+                echo "<td class='col-1'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+                echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
+                echo "<td class='col-1'>". $row['Qty']. "</td>";
                 echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }
             
