@@ -6,22 +6,18 @@ body {
     padding: 2rem;
     overflow: hidden;
 }
-
 table.table tr th, table.table tr td {
     border-color: #e9e9e9;
 }
-
 table.table-striped tbody tr:nth-of-type(odd) {
     background-color: #fcfcfc;
 }
-
 .table-wrapper {
     min-width: 1000px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
-
 table {
   text-align: left;
   position: relative;
@@ -54,17 +50,14 @@ table {
 .table-fixed thead > tr > th{
     float: left;
 }
-
 .my-custom-scrollbar {
     position: relative;
     height: 1000px;
     overflow: auto;
 }
-
 .table-wrapper-scroll-y {
     display: block;
 }
-
 #dropdown{
     padding: 20px;
     margin-top: -6px;
