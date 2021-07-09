@@ -2,7 +2,6 @@
 function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
-    //include("./includes/mysqlconn.php");
     $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result();
@@ -14,7 +13,6 @@ function Home(){
             $current_date = date("Y-m-d");
             $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             echo "<tr>";
-            //echo "<td></td>";
             echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
@@ -49,17 +47,17 @@ function Home(){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>All Job Information</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../style and cleanup/table.css">
-<script type="text/javascript" src="./tablesorter/jquery.tablesorter.js"></script>
-
+    <meta name="author" content="Technicque Inc. Job Schedule, Developer: Nathan Creger"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>All Job Information</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style and cleanup/table.css">
+    <script type="text/javascript" src="./tablesorter/jquery.tablesorter.js"></script>
 </head>
 <body>
     <section>
@@ -71,7 +69,7 @@ function Home(){
                         <thead>
                             <tr>
                                 <div class="form-group row">
-                                    <div class="mx-auto" style="width: 600px">
+                                    <div class="mx-auto">
                                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                     </div>
                                 </div>
@@ -87,14 +85,12 @@ function Home(){
                                 <th class="col-1">Customer_PO</th>
                                 <th class="col-1">Quantity</th>
                                 <th class="col-1">Product Code</th>
-
                             </tr>
                         <tbody>
                             <tr>
                                 <?php
                                     require("./includes/dbh.inc.php");
                                     require_once("./style and cleanup/pictures.php");
-                                    //require_once("./includes/mysqlconn.php");
                                     Home();
                                 ?>
                                 </td>
