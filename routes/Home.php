@@ -47,20 +47,17 @@ function Home(){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-<title>All Job Information</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="extensions/sticky-header/bootstrap-table-sticky-header.css">
-<script src="extensions/sticky-header/bootstrap-table-sticky-header.js"></script>
-<link rel="stylesheet" href="../style and cleanup/table.css">
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="./tablesorter/jquery.tablesorter.js"></script>
+<meta name="author" content="Technicque Inc. Job Schedule, Developer: Nathan Creger"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>All Job Information</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../style and cleanup/table.css">
+    <script type="text/javascript" src="./tablesorter/jquery.tablesorter.js"></script>
 </head>
 <body>
     <base href="localhost:8080"/>
@@ -72,7 +69,7 @@ function Home(){
                     <thead>
                         <tr>
                             <div class="form-group row">
-                                <div class="mx-auto" style="width: 600px">
+                                <div class="mx-auto">
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                 </div>
                             </div>
@@ -95,7 +92,6 @@ function Home(){
                     </thead>
                     <tbody>
                         <tr>
-                        <td class="w-25">
                         <?php
                             require("./includes/dbh.inc.php");
                             require_once("./style and cleanup/pictures.php");
