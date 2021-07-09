@@ -36,14 +36,14 @@ function Home(){
                 echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
                 echo "<td class='col-1'>". $row['Qty']. "</td>";
                 echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
-                
+
             }
-            
+
         }
     }if(!$conn){
         die("Connection failed: ". mysqli_connect_error());
     }
-    
+
 }
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,6 @@ function Home(){
 <title>All Job Information</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -92,13 +91,12 @@ function Home(){
                             </tr>
                         <tbody>
                             <tr>
-                                <td class="w-25">
-                                    <?php
-                                        require("./includes/dbh.inc.php");
-                                        require_once("./style and cleanup/pictures.php");
-                                        //require_once("./includes/mysqlconn.php");
-                                        Home();
-                                    ?>
+                                <?php
+                                    require("./includes/dbh.inc.php");
+                                    require_once("./style and cleanup/pictures.php");
+                                    //require_once("./includes/mysqlconn.php");
+                                    Home();
+                                ?>
                                 </td>
                             </tr>
                         </tbody>
@@ -115,10 +113,18 @@ function Home(){
               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
           });
-        });
+        })
         $(function() {
           $("#sortTable").tablesorter();
         });
-    </script> 
+        $(document).ready(function(){
+          $("#dropdown").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".dropdown-menu li").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+    </script>
 </body>
 </html>
