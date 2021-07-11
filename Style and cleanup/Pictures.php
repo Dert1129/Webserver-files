@@ -1,5 +1,8 @@
 <?php
 include_once('./includes/dbh.inc.php');
+$stmt = mysqli_prepare($conn, "SELECT Part_Number FROM Job_Schedule");
+$stmt->execute();
+$result = $stmt->get_result();
 
 if($result !== false){
   while($row = $result->fetch_assoc()){
