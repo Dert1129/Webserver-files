@@ -21,7 +21,7 @@ to download xampp:
             14. paste files inside of ext folder
             15. open xampp
             16. click on config in the Apace module. A drop down will open, click PHP(php.ini)
-            17. this should open a notepad text file. Ctrl + F to search for "extention="
+            17. this should open a notepad text file. Ctrl + F to search for "extension="
             18. click enter until you see a list of extenstions
             19. in the list of extenstions, type "extension=php_pdo_sqlsrv_73_ts" The php_ should be the EXACT same name as the .dll files you copy and pasted earlier
             20. repeat step 19 for the second .dll file
@@ -44,7 +44,8 @@ https://www.microsoft.com/en-us/download/confirmation.aspx?id=20098
 
 To launch server:
     1. open xampp
-    2. click start
+    2. click start on apache 
+    3. Click start on MySQL 
     
 To view job table:
     1. type ip address of machine into browser, followed by a colon and 8080 (ex: 127.0.0.1:8080)
