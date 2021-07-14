@@ -68,3 +68,7 @@ table {
  .mx-auto{
      width: 600px;
  }
+ 
+ img-responsive{
+     padding: 15px;
+ }
