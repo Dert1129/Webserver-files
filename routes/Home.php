@@ -2,7 +2,6 @@
 function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
-    //include("./includes/mysqlconn.php");
     $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result();
@@ -12,11 +11,19 @@ function Home(){
 
             $date = date_format(new DateTime($row["Due_Date"]), "Y-m-d");
             $current_date = date("Y-m-d");
-            $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            $year = date("Y");
+            $pastYear = $year - 1;
+            $path = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            if(is_dir($path)){
+                $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            }else{
+                $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            }
             echo "<tr>";
             echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date < $current_date){
-                echo "<td class='col-1 text-danger'>". $row['Technician']. "</td>";
+                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
                 echo "<td class='col-1 text-danger'>". $date. "</td>";
                 echo "<td class='col-1 text-danger'>". $row['Customer']. "</td>";
@@ -26,7 +33,7 @@ function Home(){
                 echo "<td class='col-1 text-danger'>". $row['Qty']. "</td>";
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }else{
-                echo "<td class='col-1'>". $row['Technician']. "</td>";
+                echo "<td class='col-1'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
                 echo "<td class='col-1'>". $date. "</td>";
                 echo "<td class='col-1'>". $row['Customer']. "</td>";
@@ -36,12 +43,10 @@ function Home(){
                 echo "<td class='col-1'>". $row['Qty']. "</td>";
                 echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }
-            
         }
     }if(!$conn){
         die("Connection failed: ". mysqli_connect_error());
     }
-    
 }
 ?>
 <!DOCTYPE html>
@@ -65,7 +70,7 @@ function Home(){
         <div class="table-responsive">
             <div class="table-wrapper">
                 <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
-                <table id="sortTable" class="table table-striped table-fixed tablesorter">
+                <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm ">
                     <thead>
                         <tr>
                             <div class="form-group row">
@@ -73,10 +78,9 @@ function Home(){
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                 </div>
                             </div>
+                            <label for="Headers" class="mx-auto">Click on table headers to sort</label>
                         </tr>
-                        <div style="overflow-x: auto;">
-                            <tr id="Headers">
-                                <label for="Headers" class="mx-auto">Click on table headers to sort</label>
+                            <tr style="text-align: left">
                                 <th class="col-2">Thumbnail</th>
                                 <th class="col-1">Technician</a></th>
                                 <th class="col-1">Job Number</a></th>
@@ -87,33 +91,34 @@ function Home(){
                                 <th class="col-1">Customer_PO</a></th>
                                 <th class="col-1">Quantity</th>
                                 <th class="col-1">Product Code</a></th>
+                                </tr>
+                        <tbody>
+                            <tr>
+                                <?php
+                                    require("./includes/dbh.inc.php");
+                                    require_once("./style and cleanup/pictures.php");
+                                    Home();
+                                ?>
+                                </td>
                             </tr>
-                        </div>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <?php
-                            require("./includes/dbh.inc.php");
-                            require_once("./style and cleanup/pictures.php");
-                            Home();
-                        ?>
-                        </tr>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#sortTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-$(function() {
-  $("#sortTable").tablesorter();
-});
-</script> 
+    </section>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#sortTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        })
+        $(function() {
+          $("#sortTable").tablesorter();
+        });
+    </script>
 </body>
 </html>
