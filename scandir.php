@@ -1,17 +1,21 @@
 <?php
-    // $regPattern should be using regular expression
-function rsearch($folder, $regPattern) {
-    $dir = new RecursiveDirectoryIterator($folder);
-    $ite = new RecursiveIteratorIterator($dir);
-    $files = new RegexIterator($ite, $regPattern, RegexIterator::GET_MATCH);
-    $fileList = array();
-    foreach($files as $file) {
-        $fileList = array_merge($fileList, $file);
+require("./includes/dbh.inc.php");
+$stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
+$stmt->execute();
+$result = $stmt->get_result();
+if($result !==false){
+    while($row = $result->fetch_assoc()){
+        $year = date("Y");
+        $pastYear = $year - 1;
+        $path = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+        $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+        if(is_dir($path)){
+                echo $path. "</br>";
+        }else if(is_dir($altPath)){
+            echo $altPath . "</br>";
+        }else{
+            echo "No file found </br>";
+        }
     }
-    return $fileList;
 }
-
-// usage: to find the test.zip file recursively
-$result = rsearch("//tiws07/dwg/Customer/", '/.*\/Torque Rod Retainer-120814-1-1\.jpg/');
-var_dump($result);
 ?>

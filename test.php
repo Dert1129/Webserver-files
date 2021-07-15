@@ -1,4 +1,4 @@
-<?php
+<?php 
 function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
@@ -8,12 +8,20 @@ function Home(){
 
     if ($result !==false){
         while ($row = $result->fetch_assoc()){
-
+            
             $date = date_format(new DateTime($row["Due_Date"]), "Y-m-d");
             $current_date = date("Y-m-d");
-            $directory = "file://///tiws07/dwg/Customer/".$row['Year']."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            $year = date("Y");
+            $pastYear = $year - 1;
+            $path = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            if(is_dir($path)){
+                $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            }else{
+                $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+            }
             echo "<tr>";
-            echo "<td class='col-2'>". "<img src='http://195.100.202.209:8080/Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date < $current_date){
                 echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
@@ -34,14 +42,11 @@ function Home(){
                 echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
                 echo "<td class='col-1'>". $row['Qty']. "</td>";
                 echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
-
             }
-
         }
-    }if(!$conn){
+    }else{
         die("Connection failed: ". mysqli_connect_error());
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -73,6 +78,7 @@ function Home(){
                                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                     </div>
                                 </div>
+                                <label for="Headers" class="mx-auto">Click on table headers to sort</label>
                             </tr>
                             <tr style="text-align: left">
                                 <th class="col-2">Thumbnail</th>
@@ -112,14 +118,6 @@ function Home(){
         })
         $(function() {
           $("#sortTable").tablesorter();
-        });
-        $(document).ready(function(){
-          $("#dropdown").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".dropdown-menu li").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-          });
         });
     </script>
 </body>
