@@ -8,6 +8,7 @@ body {
 }
 table.table tr th, table.table tr td {
     border-color: #e9e9e9;
+    height: max-content;
 }
 table.table-striped tbody tr:nth-of-type(odd) {
     background-color: #fcfcfc;
@@ -26,7 +27,7 @@ table {
 .table-fixed thead{
     padding: 15px;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 .table-fixed tbody {
     height: 600px;
@@ -40,6 +41,7 @@ table {
 .table-fixed th{
     display: block;
 }
+
 .table-fixed tr:after {
     content: "";
     display: block;
@@ -58,6 +60,7 @@ table {
 .table-wrapper-scroll-y {
     display: block;
 }
+
 #dropdown{
     padding: 20px;
     margin-top: -6px;
@@ -72,3 +75,34 @@ table {
  img-responsive{
      padding: 15px;
  }
+ .checkbox-menu li label {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    margin:0;
+    transition: background-color .4s ease;
+}
+.checkbox-menu li input {
+    margin: 0px 5px;
+    top: 2px;
+    position: relative;
+}
+
+.checkbox-menu li.active label {
+    background-color: #cbcbff;
+    font-weight:bold;
+}
+
+.checkbox-menu li label:hover,
+.checkbox-menu li label:focus {
+    background-color: #f5f5f5;
+}
+
+.checkbox-menu li.active label:hover,
+.checkbox-menu li.active label:focus {
+    background-color: #b8b8ff;
+}
