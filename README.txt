@@ -1,8 +1,22 @@
 BEFORE RUNNING PROGRAM DOWNLOAD THESE AND FOLLOW INSTRUCTIONS
+    1.install nodejs https://nodejs.org/en/
+    2.install vscode
+    3.type "npm install jquery" into terminal
+    4.type "npm install tablesorter" into terminal
+    5.type "npm install tslib" into terminal
 to download xampp:
     https://www.apachefriends.org/download.html
         1. accept default settings.
         2. install
+----------------ignore these instructions for now-----------------------------
+        download/install php drivers for windows DOWNLOAD AFTER XAMPP
+            https://www.microsoft.com/en-us/download/confirmation.aspx?id=20098
+                1. click browse to place drivers in
+                2. find and open xampp folder
+                3. open php folder
+                4. click on ext folder
+                5. click okay
+                6. done
         BEFORE CHANGING PORT NUMBER AND IP, DO THIS FIRST
             1. open xampp and click start.
             2. type localhost:1433 into your browser
@@ -26,21 +40,12 @@ to download xampp:
             19. in the list of extenstions, type "extension=php_pdo_sqlsrv_73_ts" The php_ should be the EXACT same name as the .dll files you copy and pasted earlier
             20. repeat step 19 for the second .dll file
 
-            
+----------------------------------------------------------------------------------
         Change config files if you want:
             1. use default installation settings
             2. open xampp and click config on the Apache module. A drop down will open, click Apache(httpd.conf).
             3. Ctl + F to search for "Listen"
             4. Change ip and port to whatever you want to.
-
-download/install php drivers for windows DOWNLOAD AFTER XAMPP 
-https://www.microsoft.com/en-us/download/confirmation.aspx?id=20098
-1. click browse to place drivers in
-2. find and open xampp folder
-3. open php folder
-4. click on ext folder
-5. click okay
-6. done
 
 To launch server:
     1. open xampp
@@ -49,4 +54,5 @@ To launch server:
     
 To view job table:
     1. type ip address of machine into browser, followed by a colon and 8080 (ex: 127.0.0.1:8080)
+
     
