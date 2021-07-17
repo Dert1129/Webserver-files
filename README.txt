@@ -1,9 +1,10 @@
 BEFORE RUNNING PROGRAM DOWNLOAD THESE AND FOLLOW INSTRUCTIONS
-    1.install nodejs https://nodejs.org/en/
-    2.install vscode
-    3.type "npm install jquery" into terminal
-    4.type "npm install tablesorter" into terminal
-    5.type "npm install tslib" into terminal
+    1.  Install nodejs https://nodejs.org/en/
+    2.  Install vscode
+    3.  Type "npm install jquery" into terminal
+    4.  Type "npm install tablesorter" into terminal
+    5.  Type "npm install tslib" into terminal
+    6.  Install "Enable local file links" Extention on CHROME
 to download xampp:
     https://www.apachefriends.org/download.html
         1. accept default settings.
