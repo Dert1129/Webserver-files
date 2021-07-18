@@ -1,6 +1,6 @@
 <?php
 include_once('./includes/dbh.inc.php');
-$stmt = mysqli_prepare($conn, "SELECT Part_Number FROM Job_Schedule");
+$stmt = $conn->prepare("SELECT Part_Number FROM Job_Schedule");
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -11,7 +11,7 @@ if($result !== false){
     if ($file !== "." && $file !== "..") {
       $name = strstr($file, '.png', TRUE);
       if($row['Part_Number']==$name){
-          $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_number = ?;");
+          $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
           $stmt->bind_param("ss", $file, $name);
           $files = scandir('./Thumbnails/');
           $name = strstr($file, '.png', TRUE);
