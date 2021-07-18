@@ -35,7 +35,7 @@ function Home(){
                     $stmt->execute();
                     echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }else{
-                    echo "<td class='col-2'>". "<img class='opacity-2' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
@@ -60,7 +60,7 @@ function Home(){
                     $stmt->execute();
                     echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }else{
-                    echo "<td class='col-2'>". "<img class='opacity-2' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
@@ -82,11 +82,6 @@ function product_Codes(){
     $stmt = mysqli_prepare($conn, "SELECT DISTINCT Product_Code FROM Job_Schedule ORDER BY Product_Code;");
     $stmt->execute();
     $result = $stmt->get_result();
-            echo '<li>';
-            echo '<label>';
-            echo '<input type="checkbox" onclick="toggle(this);"/>Select all</input>';
-            echo '</label>';
-            echo '<li>';
     if($result !== false){
         while($row = $result->fetch_assoc()){
             echo '<li>';
@@ -191,13 +186,7 @@ function product_Codes(){
       e.stopPropagation();
     });
     // Listen for click on toggle checkbox
-    function toggle(source) {
-        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i] != source)
-                checkboxes[i].checked = source.checked;
-        };
-    };
+
     $(document).ready(function(){
         $(".name").on("click", function() {
             name_list = []
@@ -215,7 +204,6 @@ function product_Codes(){
         	$("#myTable tr").show()
         });
     });
-    $('rows').height(document.documentElement.clientHeight);
     </script>
 </body>
 </html>
