@@ -5,7 +5,7 @@ function Home(){
     $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result();
-
+    
     if ($result !==false){
         while ($row = $result->fetch_assoc()){
             
@@ -21,27 +21,56 @@ function Home(){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
             }
             echo "<tr>";
-            echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             if($date < $current_date){
-                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1 text-danger'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-                echo "<td class='col-1 text-danger'>". $date. "</td>";
-                echo "<td class='col-1 text-danger'>". $row['Customer']. "</td>";
-                echo "<td class='col-1 text-danger'>". $row['Part_Number']. "</td>";
-                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-                echo "<td class='col-1 text-danger'>". $row['Customer_PO']. "</td>";
-                echo "<td class='col-1 text-danger'>". $row['Qty']. "</td>";
-                echo "<td class='col-1 text-danger'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+                if(strlen($row["Part_Number"])==2){
+                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                    $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
+                    $Thumbnail = $row['Part_Number'];
+                    $stmt->execute();
+                    echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                }elseif ($row['Part_Number']=="PACKAGING") {
+                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                    $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
+                    $Packaging = "PACKAGING";
+                    $stmt->execute();
+                    echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                }else{
+                    echo "<td class='col-2'>". "<img class='opacity-2' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                }
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". $date. "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Customer']. "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>".$row['Part_Number']."</td>"; 
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Customer_PO']. "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Qty']. "</td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }else{
-                echo "<td class='col-1'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-                echo "<td class='col-1'>". $date. "</td>";
-                echo "<td class='col-1'>". $row['Customer']. "</td>";
-                echo "<td class='col-1'>". $row['Part_Number']. "</td>";
-                echo "<td class='col-1'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-                echo "<td class='col-1'>". $row['Customer_PO']. "</td>";
-                echo "<td class='col-1'>". $row['Qty']. "</td>";
-                echo "<td class='col-1'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+                if(strlen($row["Part_Number"])==2){
+                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                    $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
+                    $Thumbnail = $row['Part_Number'];
+                    $stmt->execute();
+                    echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                }elseif ($row['Part_Number']=="PACKAGING") {
+                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                    $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
+                    $Packaging = "PACKAGING";
+                    $stmt->execute();
+                    echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                }else{
+                    echo "<td class='col-2'>". "<img class='opacity-2' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                }
+                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
+                echo "<td class='col-1' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                echo "<td class='col-1' style='height:122.59px'>". $date. "</td>";
+                echo "<td class='col-1' style='height:122.59px'>". $row['Customer']. "</td>";
+                echo "<td class='col-1' style='height:122.59px'>".$row['Part_Number']."</td>";          
+                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+                echo "<td class='col-1' style='height:122.59px'>". $row['Customer_PO']. "</td>";
+                echo "<td class='col-1' style='height:122.59px'>". $row['Qty']. "</td>";
+                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }
         }
     }else{
@@ -121,7 +150,7 @@ function product_Codes(){
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            <tr>
+                            <tr id="rows">
                                 <?php
                                     require("./includes/dbh.inc.php");
                                     require_once("./style and cleanup/pictures.php");
@@ -186,6 +215,7 @@ function product_Codes(){
         	$("#myTable tr").show()
         });
     });
+    $('rows').height(document.documentElement.clientHeight);
     </script>
 </body>
 </html>
