@@ -140,7 +140,7 @@ function product_Codes(){
                                 <th class="col-1">Due Date</th>
                                 <th class="col-1">Customer</th>
                                 <th class="col-1">Part Number</th>
-                                <th class="col-1">Part Desc</th>
+                                <th class="col-1">Part Description</th>
                                 <th class="col-1">Customer_PO</th>
                                 <th class="col-1">Quantity</th>
                                 <th class="col-1" id="ProductColumn">Product Code</th>
