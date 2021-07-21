@@ -34,8 +34,10 @@ function Home(){
                     $Packaging = "PACKAGING";
                     $stmt->execute();
                     echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
-                }else{
+                }elseif($row['Thumbnail']=="No image available.png"){
                     echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                }else{
+                    echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
@@ -59,8 +61,10 @@ function Home(){
                     $Packaging = "PACKAGING";
                     $stmt->execute();
                     echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
-                }else{
+                }elseif($row['Thumbnail']=="No image available.png"){
                     echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                }else{
+                    echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
@@ -109,6 +113,7 @@ function product_Codes(){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
+    
 </head>
 <body>
     <section>
@@ -116,8 +121,8 @@ function product_Codes(){
             <div class="table-responsive">
                 <div class="table-wrapper table-wrapper-scroll-y my-custom-scrollbar">
                     <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
-                        <div class="input-group mb-3 form-group row mx-auto">
-                            <input type="text" class="form-control" placeholder="Search.." id="myInput">
+                        <div class="input-group mb-3 row mx-auto">
+                                <input type="text" class="form-control" placeholder="Search.." id="myInput">
                                 <div class="input-group-btn dropright">
                                     <button id="dd" type="button" class="btn dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Product Codes<span class="caret"></span></button>
                                             <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
@@ -128,9 +133,6 @@ function product_Codes(){
                         </div>
                     <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm ">
                         <thead>
-                            <tr>
-                                <label for="Headers" class="mx-auto">Click on table headers to sort</label>
-                            </tr>
                             <tr style="text-align: left header" id="Headers">
                                 <th class="col-2">Thumbnail</th>
                                 <th class="col-1">Technician</th>
@@ -138,10 +140,10 @@ function product_Codes(){
                                 <th class="col-1">Due Date</th>
                                 <th class="col-1">Customer</th>
                                 <th class="col-1">Part Number</th>
-                                <th class="col-1">Part Description</th>
+                                <th class="col-1">Part Desc</th>
                                 <th class="col-1">Customer_PO</th>
                                 <th class="col-1">Quantity</th>
-                                <th class="col-1">Product Code</th>
+                                <th class="col-1" id="ProductColumn">Product Code</th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
