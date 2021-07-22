@@ -14,7 +14,6 @@ if($result !== false){
           $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
           $stmt->bind_param("ss", $file, $name);
           $files = scandir('./Thumbnails/');
-          $name = strstr($file, '.png', TRUE);
           $stmt->execute();
          }
        }
