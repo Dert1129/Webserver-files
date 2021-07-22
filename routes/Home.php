@@ -2,7 +2,7 @@
 function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
-    $stmt = mysqli_prepare($conn, "SELECT * FROM Job_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM Job_Schedule ORDER BY Due_Date ASC;");
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -86,6 +86,11 @@ function product_Codes(){
     $stmt = mysqli_prepare($conn, "SELECT DISTINCT Product_Code FROM Job_Schedule ORDER BY Product_Code;");
     $stmt->execute();
     $result = $stmt->get_result();
+    echo "<li>";
+    echo "<label>";
+    echo "<input type='checkbox' id='selectAll'>Select All</input>";
+    echo "</label";
+    echo "</li>";
     if($result !== false){
         while($row = $result->fetch_assoc()){
             echo '<li>';
@@ -113,7 +118,8 @@ function product_Codes(){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
-    
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
 </head>
 <body>
     <section>
@@ -123,27 +129,29 @@ function product_Codes(){
                     <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
                         <div class="input-group mb-3 row mx-auto">
                                 <input type="text" class="form-control" placeholder="Search.." id="myInput">
+                                <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times" aria-hidden="true"></i></button>
                                 <div class="input-group-btn dropright">
-                                    <button id="dd" type="button" class="btn dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Product Codes<span class="caret"></span></button>
+                                    <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Product Codes<span class="caret"></span></button>
                                             <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
                                                 <input type="text" class="form-control" placeholder="Search.." id="ddInput">
+                                                <li class="divider"></li>
                                                 <?php product_Codes();?> 
                                             </ul>
                                 </div>     
                         </div>
-                    <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm ">
+                    <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm" data-card-width="768">
                         <thead>
                             <tr style="text-align: left header" id="Headers">
-                                <th class="col-2">Thumbnail</th>
-                                <th class="col-1">Technician</th>
-                                <th class="col-1">Job Number</th>
-                                <th class="col-1">Due Date</th>
-                                <th class="col-1">Customer</th>
-                                <th class="col-1">Part Number</th>
-                                <th class="col-1">Part Description</th>
-                                <th class="col-1">Customer_PO</th>
-                                <th class="col-1">Quantity</th>
-                                <th class="col-1" id="ProductColumn">Product Code</th>
+                                <th class="col-2">Thumbnail <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Technician <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Job Number <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Due Date <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Customer <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Part Number <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Part Descr <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Customer PO <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1">Quantity <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up" ></i></th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
@@ -162,9 +170,24 @@ function product_Codes(){
         </div>
     </section>
     <script>
+    $(document).ready(function(){
+        $("#clearSearch").on("click", function(){
+            $("#myTable tr").filter(function(){
+                $(this).show();
+            })
+        $("input:checkbox").not(this).prop("checked", this.checked = false);
+        })
+    });
     
     $(document).ready(function(){
-      $("#myInput").on("keyup", function() {
+        $("#selectAll").on("click", function(){
+            $('input:checkbox').not(this).prop('checked', this.checked);
+            $("#myTable tr").show();
+    });
+    })
+
+    $(document).ready(function(){
+      $("#myInput").on("input", function() {
         var value = $(this).val().toLowerCase();
         $("#myTable tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
@@ -205,6 +228,11 @@ function product_Codes(){
         if(flag == 1)
         	$("#myTable tr").show()
         });
+    });
+
+    $('#Headers th').click(function(){
+    $(this).next('td').slideToggle('500');
+    $(this).find('i').toggleClass('fa fa-sort-up fa fa-sort-down')
     });
     </script>
 </body>
