@@ -89,8 +89,9 @@ function product_Codes(){
     echo "<li>";
     echo "<label>";
     echo "<input type='checkbox' id='selectAll'>Select All</input>";
-    echo "</label";
+    echo "</label>";
     echo "</li>";
+    echo "<hr class='solid'>";
     if($result !== false){
         while($row = $result->fetch_assoc()){
             echo '<li>';
