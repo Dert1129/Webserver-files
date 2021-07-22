@@ -30,11 +30,10 @@ include_once('./routes/home.php');
                                 <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times" aria-hidden="true"></i></button>
                                 <div class="input-group-btn dropright">
                                     <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Product Codes<span class="caret"></span></button>
-                                            <ul class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
+                                            <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
                                                 <input type="text" class="form-control" placeholder="Search.." id="ddInput">
-                                                <li class="divider"></li>
                                                 <?php product_Codes();?> 
-                                            </ul>
+                                            </div>
                                 </div>     
                         </div>
                     <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm" data-card-width="768">
