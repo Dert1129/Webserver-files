@@ -83,7 +83,7 @@ function Home(){
 }
 function product_Codes(){
     include("./includes/dbh.inc.php");
-    $stmt = mysqli_prepare($conn, "SELECT DISTINCT Product_Code FROM Job_Schedule ORDER BY Product_Code;");
+    $stmt = $conn->prepare("SELECT DISTINCT Product_Code FROM Job_Schedule ORDER BY Product_Code;");
     $stmt->execute();
     $result = $stmt->get_result();
     echo "<li>";
