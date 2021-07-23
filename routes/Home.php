@@ -17,9 +17,14 @@ function Home(){
             $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
             if(is_dir($path)){
                 $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Job_number'];
-            }else{
+                $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+            }elseif(is_dir($altPath)){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+                $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+            }else{
+                $job = "Directory Not Yet Available";
             }
+            
             echo "<tr>";
             if($date < $current_date){
                 if(strlen($row["Part_Number"])==2){
@@ -40,7 +45,7 @@ function Home(){
                     echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                echo "<td class='col-1 text-danger' style='height:122.59px'>".$job."</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". $date. "</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Customer']. "</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'>".$row['Part_Number']."</td>"; 
@@ -67,7 +72,7 @@ function Home(){
                     echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1' style='height:122.59px'> <a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                echo "<td class='col-1' style='height:122.59px'>".$job."</td>";
                 echo "<td class='col-1' style='height:122.59px'>". $date. "</td>";
                 echo "<td class='col-1' style='height:122.59px'>". $row['Customer']. "</td>";
                 echo "<td class='col-1' style='height:122.59px'>".$row['Part_Number']."</td>";          
