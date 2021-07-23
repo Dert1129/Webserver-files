@@ -1,26 +1,3 @@
-/*DROP TABLE IF EXISTS Job_Schedule;
-
-*/ /*write Year as a column inside of the backschedule*/
-
-
-
-/*BULK INSERT Job_Schedule
-FROM 'C:\Users\nathanC\Desktop\2021-06-29_Backschedule.csv'
-WITH(
-FORMAT='CSV',
-firstrow=2,
-FIELDTERMINATOR = ',',
-ROWTERMINATOR = '0x0a'
-);
-
-
-
-UPDATE Job_Schedule
-SET Thumbnail = 
-    (SELECT  BulkColumn FROM OPENROWSET(BULK  N'\\tiws07\dwg\Mfg Mtg\Nathan\No image available.jpg', SINGLE_BLOB) AS Thumbnail)
-WHERE Thumbnail is null;
-*/
-
 DROP TABLE IF EXISTS Job_Schedule;
 CREATE TABLE Job_Schedule(
 	Technician varchar(50),
@@ -36,12 +13,14 @@ CREATE TABLE Job_Schedule(
 	Product_Code varchar(50)
 );
 
-LOAD DATA INFILE "2021-07-15_Backschedule.csv"
+LOAD DATA INFILE "MyTable.csv"
 INTO TABLE job_schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
 LINES TERMINATED BY "\n"
 IGNORE 1 ROWS;
+
+DELETE FROM job_schedule WHERE Technician = "Page -1 of 1";
 
 alter table job_schedule
 add JSDID INT PRIMARY KEY auto_increment primary KEY;
@@ -49,13 +28,11 @@ add JSDID INT PRIMARY KEY auto_increment primary KEY;
 alter table job_schedule
 add Thumbnail text;
 
-/*copy paste update & set function for customers not covered*/
-/*ALTER TABLE job_schedule CHANGE ï»¿Technician Technician text;*/
-
 UPDATE Job_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
+/*Update customer names according to file system. If customer names don't match exactly then the Juob_number Hyperlink won't work*/
 UPDATE Job_Schedule
 SET Customer = 'Aeroparts'
 WHERE Customer = 'AeroParts Manufacturing & Repair';
@@ -120,6 +97,10 @@ UPDATE Job_Schedule
 SET Customer = 'GMP Metal Products'
 WHERE Customer = 'GMP METAL PRODUCTS';
 
+UPDATE job_schedule 
+SET Customer = 'Hendrick Motorsports'
+WHERE Customer = "HENDRICK MOTORSPORTS";
+
 UPDATE Job_Schedule
 SET Customer = 'Honda'
 WHERE Customer = 'HONDA R&D AMERICAS';
@@ -163,10 +144,6 @@ WHERE Customer = 'NIKOLA CORPORATION';
 UPDATE Job_Schedule
 SET Customer = 'Penske'
 WHERE Customer = 'PENSKE RACING SOUTH INC';
-
-UPDATE Job_Schedule
-SET year = '2021'
-WHERE Customer = 'Penske';
 
 UPDATE Job_Schedule
 SET Customer = 'Pit Products'
