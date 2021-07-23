@@ -29,6 +29,9 @@ alter table job_schedule
 add Thumbnail text;
 
 UPDATE Job_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Job_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
