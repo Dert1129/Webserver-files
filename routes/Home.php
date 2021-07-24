@@ -22,7 +22,7 @@ function Home(){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }else{
-                $job = "Directory Not Yet Available";
+                $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
             
             echo "<tr>";
