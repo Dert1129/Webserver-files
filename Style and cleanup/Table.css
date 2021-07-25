@@ -1,7 +1,7 @@
-body {
+section {
     color: #666;
     background: #f5f5f5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Andale Mono, monospace;
     margin: 0;
     padding: 2rem;
     overflow: hidden;
@@ -14,9 +14,9 @@ table.table-striped tbody tr:nth-of-type(odd) {
     background-color: #fcfcfc;
 }
 .table-wrapper {
-    min-width: 1000px;
+    min-width: 62rem;
     background: #fff;
-    padding: 20px;
+    padding: 2rem;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 table {
@@ -25,12 +25,12 @@ table {
   border-collapse: collapse; 
 }
 .table-fixed thead{
-    padding: 15px;
+    padding: 1rem;
     width: 100%;
     overflow: visible;
 }
 .table-fixed tbody {
-    height: 600px;
+    height: 37rem;
     overflow-y: auto;
     width: 100%;
 }
@@ -54,7 +54,7 @@ table {
 }
 .my-custom-scrollbar {
     position: relative;
-    height: 1000px;
+    height: 62rem;
     overflow: auto;
 }
 .table-wrapper-scroll-y {
@@ -62,31 +62,32 @@ table {
 }
 
 #dropdown{
-    padding: 20px;
+    padding: 1rem;
     margin-top: -6px;
     border: 0;
     border-radius: 0;
     background: #f1f1f1;
 }
- .mx-auto{
-     width: 600px;
- }
+.mx-auto,
+.input-group{
+     width: 37rem;
+}
  
- #Thumbnail{
-     padding: 15px;
-     opacity: 0.2!important;
- }
- 
- .checkbox-menu li label {
-    display: block;
-    padding: 3px 10px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
-    margin:0;
-    transition: background-color .4s ease;
+#Thumbnail{
+    padding: 1rem;
+    opacity: 0.2!important;
+}
+
+.checkbox-menu li label {
+   display: block;
+   padding: 3px 10px;
+   clear: both;
+   font-weight: normal;
+   line-height: 1.42857143;
+   color: #333;
+   white-space: nowrap;
+   margin:0;
+   transition: background-color .4s ease;
 }
 .checkbox-menu li input {
     margin: 0px 5px;
@@ -114,4 +115,11 @@ hr.solid {
 
 input.form-control{
   padding-bottom:3px;
+}
+.img-responsive{
+    padding: 1rem;
+}
+
+.display-4{
+    text-align: center;
 }

@@ -9,7 +9,7 @@ include_once('./routes/home.php');
     <meta name="author" content="Technicque Inc. Job Schedule, Developer: Nathan Creger"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>All Job Information</title>
+    <title>Customer Job Schedule</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />
@@ -18,6 +18,7 @@ include_once('./routes/home.php');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
+
 </head>
 <body>
     <section>
@@ -25,16 +26,17 @@ include_once('./routes/home.php');
             <div class="table-responsive">
                 <div class="table-wrapper table-wrapper-scroll-y my-custom-scrollbar">
                     <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
+                    <div class="row display-4 text-primary mx-auto">Customer Job Schedule</div>
                         <div class="input-group mb-3 row mx-auto">
-                                <input type="text" class="form-control" placeholder="Search.." id="myInput">
-                                <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times" aria-hidden="true"></i></button>
-                                <div class="input-group-btn dropright">
-                                    <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Product Codes<span class="caret"></span></button>
-                                            <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
-                                                <input type="text" class="form-control" placeholder="Search.." id="ddInput">
-                                                <?php product_Codes();?> 
-                                            </div>
-                                </div>     
+                            <input type="text" class="form-control" placeholder="Search.." id="myInput">
+                            <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
+                            <div class="input-group-btn dropright">
+                                <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true">Product Codes<span class="caret"></span></button>
+                                <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
+                                    <input type="text" class="form-control" placeholder="Search.." id="ddInput">
+                                    <?php product_Codes();?> 
+                                </div>
+                            </div>     
                         </div>
                     <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm" data-card-width="768">
                         <thead>
