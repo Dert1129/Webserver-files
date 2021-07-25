@@ -54,7 +54,7 @@ table {
 }
 .my-custom-scrollbar {
     position: relative;
-    height: 62rem;
+    height: 62.5rem;
     overflow: auto;
 }
 .table-wrapper-scroll-y {
@@ -121,5 +121,8 @@ input.form-control{
 }
 
 .display-4{
-    text-align: center;
+    padding-left: 11rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
