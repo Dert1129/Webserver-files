@@ -24,7 +24,6 @@ function Home(){
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
-            
             echo "<tr>";
             if($date < $current_date){
                 if(strlen($row["Part_Number"])==2){
