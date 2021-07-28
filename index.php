@@ -24,12 +24,14 @@ include_once('./routes/home.php');
     <section>
         <div class="container-fluid">
             <div class="table-responsive">
-                <div class="table-wrapper table-wrapper-scroll-y my-custom-scrollbar">
+                <div class="table-wrapper table-wrapper-scroll-y">
                     <div class="row">
-                        <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
-                        <div class="display-4">Customer Job Schedule</div>
+                        <img class="img-responsive" src="./Logo/Technique Logo Cropped.jpg" alt="Techniqueinc Logo"/>
                     </div>
-                        <div class="input-group mb-3 row mx-auto">
+                    <div class="row">
+                        <div class="display-4 mx-auto">Customer Job Schedule</div>
+                    </div>
+                        <div class="input-group mb-3 row mx-auto my-auto">
                             <input type="text" class="form-control" placeholder="Search.." id="myInput">
                             <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
                             <div class="input-group-btn dropright">
