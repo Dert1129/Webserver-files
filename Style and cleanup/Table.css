@@ -54,11 +54,12 @@ table {
 .table-fixed thead > tr > th{
     float: left;
 }
+/*
 .my-custom-scrollbar {
     position: relative;
     height: 62.5rem;
     overflow: auto;
-}
+}*/
 .table-wrapper-scroll-y {
     display: block;
 }
@@ -70,9 +71,8 @@ table {
     border-radius: 0;
     background: #f1f1f1;
 }
-.mx-auto,
-.input-group{
-     width: 37rem;
+.input-group.mb-3.row{
+     width: 50rem;
 }
  
 #Thumbnail{
@@ -120,19 +120,10 @@ input.form-control{
 }
 .img-responsive{
     padding: 1rem;
+    float: left;
+    object-fit: contain;
 }
 
 .display-4{
-    padding-left: 11rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     color: rgb(0,115,182);
 }
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-      width: 100%;
-    }
-  }
