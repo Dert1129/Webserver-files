@@ -34,7 +34,7 @@ include_once('./routes/home.php');
                         <div class="input-group mb-3 row mx-auto my-auto">
                             <input type="text" class="form-control" placeholder="Search.." id="myInput">
                             <button id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
-                            <div class="input-group-btn dropright">
+                            <div class="input-group-btn dropdown">
                                 <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true">Product Codes<span class="caret"></span></button>
                                 <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
                                     <input type="text" class="form-control" placeholder="Search.." id="ddInput">
@@ -45,27 +45,24 @@ include_once('./routes/home.php');
                     <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm" data-card-width="768">
                         <thead>
                             <tr style="text-align: left header" id="Headers">
-                                <th class="col-2">Thumbnail <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Technician <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Job Number <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Due Date <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Customer <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Part Number <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Part Descr <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Customer PO <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1">Quantity <i class="fa fa-sort-up" ></i></th>
-                                <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up" ></i></th>
+                                <th class="col-2">Thumbnail <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Technician <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Job Number <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Due Date <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Customer <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Part Number <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Part Descr <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Customer PO <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1">Quantity <i class="fa fa-sort-up"></i></th>
+                                <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up"></i></th>
                             </tr>
                         </thead>
                         <tbody id="myTable">
-                            <tr id="rows">
-                                <?php
-                                    require("./includes/dbh.inc.php");
-                                    require_once("./style and cleanup/pictures.php");
-                                    Home();
-                                ?>
-                                </td>
-                            </tr>
+                            <?php
+                                require("./includes/dbh.inc.php");
+                                require_once("./style and cleanup/pictures.php");
+                                Home();
+                            ?>
                         </tbody>
                     </table>
                 </div>
