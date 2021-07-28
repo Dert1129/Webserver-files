@@ -24,7 +24,7 @@ include_once('./routes/home.php');
     <section>
         <div class="container-fluid">
             <div class="table-responsive">
-                <div class="table-wrapper table-wrapper-scroll-y">
+                <div class="table-wrapper">
                     <div class="row">
                         <img class="img-responsive" src="./Logo/Technique Logo Cropped.jpg" alt="Techniqueinc Logo"/>
                     </div>
