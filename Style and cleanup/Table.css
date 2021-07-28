@@ -35,6 +35,7 @@ table {
     height: 37rem;
     overflow-y: auto;
     width: 100%;
+    padding: 1rem;
 }
 .table-fixed thead,
 .table-fixed tbody,
@@ -42,6 +43,7 @@ table {
 .table-fixed td,
 .table-fixed th{
     display: block;
+    text-align: left;
 }
 
 .table-fixed tr:after {
@@ -53,15 +55,6 @@ table {
 .table-fixed tbody td,
 .table-fixed thead > tr > th{
     float: left;
-}
-/*
-.my-custom-scrollbar {
-    position: relative;
-    height: 62.5rem;
-    overflow: auto;
-}*/
-.table-wrapper-scroll-y {
-    display: block;
 }
 
 #dropdown{
