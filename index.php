@@ -27,7 +27,7 @@ include_once('./routes/home.php');
                 <div class="table-wrapper table-wrapper-scroll-y my-custom-scrollbar">
                     <div class="row">
                         <img class="img-responsive" src="https://www.techniqueinc.com/wp-content/uploads/2018/04/logo-2.jpg" alt="Techniqueinc Logo"/>
-                        <div class="display-4 text-primary">Customer Job Schedule</div>
+                        <div class="display-4">Customer Job Schedule</div>
                     </div>
                         <div class="input-group mb-3 row mx-auto">
                             <input type="text" class="form-control" placeholder="Search.." id="myInput">
