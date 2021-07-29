@@ -18,6 +18,7 @@ include_once('./routes/home.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
     <link rel="stylesheet" id="avia-google-webfont" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CMontserrat" type="text/css" media="all">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 </head>
 <body>
     <section>
@@ -126,6 +127,8 @@ include_once('./routes/home.php');
     $(this).next('td').slideToggle('500');
     $(this).find('i').toggleClass('fa fa-sort-up fa fa-sort-down')
     });
+    const observer = lozad();
+    observer.observe();
     </script>
 </body>
 </html>
