@@ -3,7 +3,6 @@ include_once('./includes/dbh.inc.php');
 $stmt = $conn->prepare("SELECT Part_Number FROM Job_Schedule");
 $stmt->execute();
 $result = $stmt->get_result();
-
 if($result !== false){
   while($row = $result->fetch_assoc()){
   $files = scandir('./Thumbnails/');
