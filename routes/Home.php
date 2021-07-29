@@ -37,9 +37,9 @@ function Home(){
                     $stmt->execute();
                     echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif($row['Thumbnail']=="No image available.png"){
-                    echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }else{
-                    echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1 text-danger' style='height:122.59px'>".$job."</td>";
@@ -64,9 +64,9 @@ function Home(){
                     $stmt->execute();
                     echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif($row['Thumbnail']=="No image available.png"){
-                    echo "<td class='col-2'>". "<img id='Thumbnail' src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }else{
-                    echo "<td class='col-2'>". "<img src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
                 echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
                 echo "<td class='col-1' style='height:122.59px'>".$job."</td>";
