@@ -1,7 +1,7 @@
 <?php
     include("./includes/dbh.inc.php");
 
-    $mysql_host = "localhost";
+    $mysql_host = "127.0.0.1";
     $mysql_database = "test";
     $mysql_user = "root";
     $mysql_password = "";
