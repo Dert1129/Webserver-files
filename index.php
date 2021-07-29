@@ -1,7 +1,6 @@
 <?php
 include_once('./Style and cleanup/Pictures.php');
 include_once('./routes/home.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,14 +77,12 @@ include_once('./routes/home.php');
         $("input:checkbox").not(this).prop("checked", this.checked = false);
         })
     });
-    
     $(document).ready(function(){
         $("#selectAll").on("click", function(){
             $('input:checkbox').not(this).prop('checked', this.checked);
             $("#myTable tr").show();
     });
     })
-
     $(document).ready(function(){
       $("#myInput").on("input", function() {
         var value = $(this).val().toLowerCase();
@@ -94,7 +91,6 @@ include_once('./routes/home.php');
         });
       });
     });
-
     $(document).ready(function(){
       $("#ddInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
@@ -103,15 +99,12 @@ include_once('./routes/home.php');
         });
       });
     });
-
     $(function() {
       $("#sortTable").tablesorter();
     });
     $(document).on('click', '.allow-focus', function (e) {
       e.stopPropagation();
     });
-    // Listen for click on toggle checkbox
-
     $(document).ready(function(){
         $(".name").on("click", function() {
             name_list = []
@@ -129,7 +122,6 @@ include_once('./routes/home.php');
         	$("#myTable tr").show()
         });
     });
-
     $('#Headers th').click(function(){
     $(this).next('td').slideToggle('500');
     $(this).find('i').toggleClass('fa fa-sort-up fa fa-sort-down')

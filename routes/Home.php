@@ -4,11 +4,9 @@ function Home(){
     require("./style and cleanup/pictures.php");
     $stmt = $conn->prepare("SELECT * FROM Job_Schedule ORDER BY Due_Date ASC;");
     $stmt->execute();
-    $result = $stmt->get_result();
-    
+    $result = $stmt->get_result(); 
     if ($result !==false){
         while ($row = $result->fetch_assoc()){
-            
             $date = date_format(new DateTime($row["Due_Date"]), "Y-m-d");
             $current_date = date("Y-m-d");
             $year = date("Y");
