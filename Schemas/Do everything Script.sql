@@ -65,6 +65,10 @@ SET Customer = 'Chrysler'
 WHERE Customer = 'CHRYSLER COMPANY LLC';
 
 UPDATE Job_Schedule
+SET Customer = 'Cobra Patterns & Models'
+WHERE Customer = 'COBRA PATTERNS & MODELS INC';
+
+UPDATE Job_Schedule
 SET Customer = 'ContiTech'
 WHERE Customer = 'CONTITECH';
 
