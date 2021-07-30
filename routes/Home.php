@@ -30,13 +30,13 @@ function Home(){
                     $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
                     $Thumbnail = $row['Part_Number'];
                     $stmt->execute();
-                    echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                    echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif ($row['Part_Number']=="PACKAGING") {
                     $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
                     $Packaging = "PACKAGING";
                     $stmt->execute();
-                    echo "<td class='col-2 text-danger' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                    echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif($row['Thumbnail']=="No image available.png"){
                     echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }else{
@@ -49,13 +49,13 @@ function Home(){
                     $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
                     $Thumbnail = $row['Part_Number'];
                     $stmt->execute();
-                    echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                    echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif ($row['Part_Number']=="PACKAGING") {
                     $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
                     $Packaging = "PACKAGING";
                     $stmt->execute();
-                    echo "<td class='col-2' style='height:122.59px'>".$row['Thumbnail']."</td>";
+                    echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif($row['Thumbnail']=="No image available.png"){
                     echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }else{
@@ -70,7 +70,7 @@ function Home(){
             echo "<td class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
             echo "<td class='col-1 $text' style='height:122.59px'>". $row['Customer_PO']. "</td>";
             echo "<td class='col-1 $text' style='height:122.59px'>". $row['Qty']. "</td>";
-            echo "<td class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
+            echo "<td id ='ProductCode' class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
         }
     }else{
         die("Connection failed: ". mysqli_connect_error());
