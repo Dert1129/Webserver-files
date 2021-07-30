@@ -57,9 +57,9 @@ function Home(){
                     $stmt->execute();
                     echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
                 }elseif($row['Thumbnail']=="No image available.png"){
-                    echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img alt='No Image Available' class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }else{
-                    echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+                    echo "<td class='col-2'>". "<img alt=".$row['Thumbnail']." class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
             }
             echo "<td class='col-1 $text' style='height:122.59px'>".$job."</td>";
