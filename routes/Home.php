@@ -24,6 +24,7 @@ function Home(){
             }
             echo "<tr>";
             if($date < $current_date){
+                $text = "text-danger";
                 if(strlen($row["Part_Number"])==2){
                     $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
@@ -41,16 +42,8 @@ function Home(){
                 }else{
                     echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>".$job."</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". $date. "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Customer']. "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>".$row['Part_Number']."</td>"; 
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Customer_PO']. "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". $row['Qty']. "</td>";
-                echo "<td class='col-1 text-danger' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }else{
+                $text = "";
                 if(strlen($row["Part_Number"])==2){
                     $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
@@ -68,16 +61,16 @@ function Home(){
                 }else{
                     echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
-                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
-                echo "<td class='col-1' style='height:122.59px'>".$job."</td>";
-                echo "<td class='col-1' style='height:122.59px'>". $date. "</td>";
-                echo "<td class='col-1' style='height:122.59px'>". $row['Customer']. "</td>";
-                echo "<td class='col-1' style='height:122.59px'>".$row['Part_Number']."</td>";          
-                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
-                echo "<td class='col-1' style='height:122.59px'>". $row['Customer_PO']. "</td>";
-                echo "<td class='col-1' style='height:122.59px'>". $row['Qty']. "</td>";
-                echo "<td class='col-1' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
             }
+            echo "<td class='col-1 $text' style='height:122.59px'>".$job."</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". $date. "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". $row['Customer']. "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>".$row['Part_Number']."</td>";          
+            echo "<td class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Part_Description'],0,15,'...'). "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". $row['Customer_PO']. "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". $row['Qty']. "</td>";
+            echo "<td class='col-1 $text' style='height:122.59px'>". mb_strimwidth($row['Product_Code'],0,15,'...'). "</td>";
         }
     }else{
         die("Connection failed: ". mysqli_connect_error());
