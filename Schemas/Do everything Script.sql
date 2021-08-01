@@ -37,8 +37,16 @@ WHERE Thumbnail IS NULL;
 
 /*Update customer names according to file system. If customer names don't match exactly then the Juob_number Hyperlink won't work*/
 UPDATE Job_Schedule
+SET Customer = "Ada Metals"
+WHERE Customer = "ADA Metal Products Inc";
+
+UPDATE Job_Schedule
 SET Customer = 'Aeroparts'
 WHERE Customer = 'AeroParts Manufacturing & Repair';
+
+UPDATE Job_Schedule
+SET Customer = "Alabama Laser"
+WHERE Customer = "Alabama Laser Systems";
 
 UPDATE Job_Schedule
 SET Customer = 'Arvin Sango, Inc'
@@ -47,6 +55,14 @@ WHERE Customer = 'ARVIN SANGO, INC';
 UPDATE Job_Schedule
 SET Customer = 'California Hydroforming'
 WHERE Customer = 'CALIFORNIA HYDROFORMING CO INC';
+
+UPDATE Job_Schedule
+SET Customer = "Cardington Yutaka"
+WHERE Customer = "Cardington Yutaka Technologies";
+
+UPDATE Job_Schedule
+SET Customer = "Carnegie Robotics"
+WHERE Customer = "Carnegie Robotics, LLC";
 
 UPDATE Job_Schedule
 SET Customer = 'Case NH'
@@ -81,6 +97,10 @@ SET Customer = 'Depatie'
 WHERE Customer = 'DEPATIE FLUID POWER COMPANY';
 
 UPDATE Job_Schedule
+SET Customer = "Eaton"
+WHERE Customer = "Eaton Corporation";
+
+UPDATE Job_Schedule
 SET Customer = 'Eberspaecher'
 WHERE Customer = 'EBERSPAECHER N.A.';
 
@@ -104,9 +124,13 @@ UPDATE Job_Schedule
 SET Customer = 'GMP Metal Products'
 WHERE Customer = 'GMP METAL PRODUCTS';
 
-UPDATE job_schedule 
+UPDATE Job_Schedule 
 SET Customer = 'Hendrick Motorsports'
 WHERE Customer = "HENDRICK MOTORSPORTS";
+
+UPDATE Job_Schedule 
+SET Customer = "Hendrickson Int'l"
+WHERE Customer = "Hendrickson International";
 
 UPDATE Job_Schedule
 SET Customer = 'Honda'
@@ -131,6 +155,18 @@ WHERE Customer = 'JEDCO, INC';
 UPDATE Job_Schedule
 SET Customer = 'John Deere'
 WHERE Customer = 'JOHN DEERE HARVESTER WORKS';
+
+UPDATE Job_Schedule
+SET Customer = "Kellog"
+WHERE Customer = "Kellogg's";
+
+UPDATE Job_Schedule
+SET Customer = "Mack Trucks"
+WHERE Customer = "Mack Trucks, Inc";
+
+UPDATE Job_Schedule
+SET Customer = "Magneti"
+WHERE Customer = "Magneti Marelli";
 
 UPDATE Job_Schedule
 SET Customer = 'Matcor'
@@ -161,8 +197,28 @@ SET Customer = 'Pridgeon & Clay'
 WHERE Customer = 'PRIDGEON & CLAY';
 
 UPDATE Job_Schedule
+SET Customer = "ProFab"
+WHERE Customer = "ProFab Production Fabricators, Inc.";
+
+UPDATE Job_Schedule
 SET Customer = 'Richard Childress Racing'
 WHERE Customer = 'RCR RACE OPERATIONS, LLC';
+
+UPDATE Job_Schedule
+SET Customer = "Rivian"
+WHERE Customer = "RIVIAN";
+
+UPDATE Job_Schedule
+SET Customer = "Senior Flexonics"
+WHERE Customer = "Senior Flexonics Inc";
+
+UPDATE Job_Schedule
+SET Customer = "Senneker"
+WHERE Customer = "Senneker Performance";
+
+UPDATE Job_Schedule
+SET Customer = "Stryker"
+WHERE Customer = "Stryker Corporation";
 
 UPDATE Job_Schedule
 SET Customer = 'Technique Chassis'
@@ -175,6 +231,10 @@ WHERE Customer = 'TENNECO GRASS LAKE';
 UPDATE Job_Schedule
 SET Customer = 'Tenneco Inc'
 WHERE Customer = 'TENNECO, INC';
+
+UPDATE Job_Schedule
+SET Customer = "Thor Sport Racing"
+WHERE Customer = "ThorSport Racing";
 
 UPDATE Job_Schedule
 SET Customer = 'Thyssenkrupp'
