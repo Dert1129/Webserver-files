@@ -96,9 +96,6 @@ table {
 .checkbox-menu li.active label:focus {
     background-color: #b8b8ff;
 }
-hr.solid {
-    border-top: 2px solid #bbb;
-  }
 input.form-control{
   padding-bottom:3px;
 }
