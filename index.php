@@ -32,11 +32,10 @@ include_once('./routes/home.php');
                     </div>
                         <div class="input-group mb-3 row mx-auto my-auto">
                             <input type="text" class="form-control" placeholder="Search.." id="myInput">
-                            <button alt="Clear Search Button" id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.getElementById('myInput').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
+                            <button alt="Clear Search Button" id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.querySelector('.form-control').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
                             <div class="input-group-btn dropdown">
                                 <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true">Product Codes<span class="caret"></span></button>
                                 <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
-                                    <input type="text" class="form-control" placeholder="Search.." id="ddInput">
                                     <?php product_Codes();?> 
                                 </div>
                             </div>     
@@ -75,6 +74,7 @@ include_once('./routes/home.php');
                 $(this).show();
             })
         $("input:checkbox").not(this).prop("checked", this.checked = false);
+        $(".dropdown-menu li").show();
         })
     });
     $(document).ready(function(){
