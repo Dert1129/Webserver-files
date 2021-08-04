@@ -5,7 +5,7 @@ include_once('./routes/home.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="author" content="Technicque Inc. Job Schedule, Developer: Nathan Creger"/>
+    <meta name="author" content="Technique Inc. Customer Job Schedule, Developer: Nathan Creger"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <title>Customer Job Schedule</title>
@@ -13,8 +13,8 @@ include_once('./routes/home.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="./tablesorter/jquery.tablesorter.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="./tablesorter/jquery.tablesorter.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
     <link rel="stylesheet" id="avia-google-webfont" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CMontserrat" type="text/css" media="all">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
@@ -34,35 +34,37 @@ include_once('./routes/home.php');
                             <input type="text" class="form-control" placeholder="Search.." id="myInput">
                             <button alt="Clear Search Button" id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.querySelector('.form-control').value = ''"><i class="fa fa-times"aria-hidden="true"></i></button>
                             <div class="input-group-btn dropdown">
-                                <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true"aria-expanded="true">Product Codes<span class="caret"></span></button>
+                                <button id="dd" type="button" class="btn btn-outline-dark dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Product Codes<!--<span class="caret"></span>--></button>
                                 <div class="dropdown-menu checkbox-menu allow-focus" aria-labelledby="dd">
                                     <?php product_Codes();?> 
                                 </div>
                             </div>     
                         </div>
-                    <table id="sortTable" class="table table-striped table-fixed tablesorter table-sm" data-card-width="768">
-                        <thead>
-                            <tr style="text-align: left header" id="Headers">
-                                <th class="col-2">Thumbnail <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Technician <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Job Number <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Due Date <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Customer <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Part Number <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Part Descr <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Customer PO <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1">Quantity <i class="fa fa-sort-up"></i></th>
-                                <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody id="myTable">
-                            <?php
-                                require("./includes/dbh.inc.php");
-                                require_once("./style and cleanup/pictures.php");
-                                Home();
-                            ?>
-                        </tbody>
-                    </table>
+                        <div class="tableFixHead">
+                            <table id="sortTable" class="table table-striped tablesorter table-sm">
+                                <thead>
+                                    <tr style="text-align: left header" id="Headers">
+                                        <th class="col-2">Thumbnail <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Technician <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Job Number <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Due Date <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Customer <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Part Number <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Part Descr <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Customer PO <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1">Quantity <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <?php
+                                        require("./includes/dbh.inc.php");
+                                        require_once("./style and cleanup/pictures.php");
+                                        Home();
+                                    ?>
+                                </tbody>
+                            </table>
+                    </div>
                 </div>
             </div>
         </div>
