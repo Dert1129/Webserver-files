@@ -2,7 +2,7 @@
     include("./includes/dbh.inc.php");
 
     $mysql_host = "127.0.0.1";
-    $mysql_database = "test";
+    $mysql_database = "webserver";
     $mysql_user = "root";
     $mysql_password = "";
     $db = new PDO("mysql:host=$mysql_host;dbname=$mysql_database", $mysql_user, $mysql_password);
