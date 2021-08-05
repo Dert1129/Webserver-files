@@ -13,12 +13,12 @@ CREATE TABLE Job_Schedule(
 	Product_Code varchar(50)
 );
 
-LOAD DATA INFILE "MyTable.csv"
+LOAD DATA INFILE "Job Schedule Details.csv"
 INTO TABLE job_schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
 LINES TERMINATED BY "\n"
-IGNORE 1 ROWS;
+IGNORE 2 ROWS;
 
 DELETE FROM job_schedule WHERE Technician = "Page -1 of 1";
 
