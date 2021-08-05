@@ -5,6 +5,8 @@ BEFORE RUNNING PROGRAM DOWNLOAD THESE AND FOLLOW INSTRUCTIONS
     4.  Type "npm install tablesorter" into terminal
     5.  Type "npm install tslib" into terminal
     6.  Install "Enable local file links" Extention on CHROME
+    DOWNLOAD AND INSTALL LATEST VISUAL STUDIO VERSION 
+    DOWNLOAD AND INSTALL MYSQL COMMUNITY EDITION
 to download xampp:
     https://www.apachefriends.org/download.html
         1. Accept default settings.
