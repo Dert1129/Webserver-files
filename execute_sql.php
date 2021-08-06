@@ -1,6 +1,4 @@
 <?php
-    include("./includes/dbh.inc.php");
-
     $mysql_host = "127.0.0.1";
     $mysql_database = "webserver";
     $mysql_user = "root";
