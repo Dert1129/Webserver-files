@@ -91,7 +91,7 @@ function product_Codes(){
         while($row = $result->fetch_assoc()){
             echo '<li>';
             echo '<label>';
-            ?><input type="checkbox" name="name" class="name" value=<?php echo $row["Product_Code"]?>/><?php echo $row["Product_Code"];?>
+            ?><input type="checkbox" name="name" class="name" value=<?php echo $row["Product_Code"]?>><?php echo $row["Product_Code"];?>
             <?php
         }
     }else{
