@@ -14,10 +14,11 @@ include_once('./routes/home.php');
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script type="text/javascript" src="./tablesorter/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="../style and cleanup/table.css">
+    <script src="./tablesorter/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" id="avia-google-webfont" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CMontserrat" type="text/css" media="all">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/tablesorter/dist/css/theme.bootstrap_4.min.css"/>
 </head>
 <body>
     <section>
@@ -44,16 +45,16 @@ include_once('./routes/home.php');
                             <table id="sortTable" class="table table-striped tablesorter table-sm">
                                 <thead>
                                     <tr style="text-align: left header" id="Headers">
-                                        <th class="col-2">Thumbnail <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Technician <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Job Number <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Due Date <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Customer <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Part Number <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Part Descr <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Customer PO <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1">Quantity <i class="fa fa-sort-up"></i></th>
-                                        <th class="col-1" id="ProductColumn">Product Code <i class="fa fa-sort-up"></i></th>
+                                        <th class="col-2">Thumbnail</th>
+                                        <th class="col-1">Technician</th>
+                                        <th class="col-1">Job Number</th>
+                                        <th class="col-1">Due Date</th>
+                                        <th class="col-1">Customer</th>
+                                        <th class="col-1">Part Number</th>
+                                        <th class="col-1">Part Descr</th>
+                                        <th class="col-1">Customer PO</th>
+                                        <th class="col-1">Quantity</th>
+                                        <th class="col-1" id="ProductColumn">Product Code</th>
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
@@ -70,6 +71,11 @@ include_once('./routes/home.php');
         </div>
     </section>
     <script>
+    $(document).ready(function(){
+        $("#sortTable").tablesorter({
+            theme: "bootstrap"
+        });
+    });
     $(document).ready(function(){
         $("#clearSearch").on("click", function(){
             $("#myTable tr").filter(function(){
@@ -101,9 +107,6 @@ include_once('./routes/home.php');
         });
       });
     });
-    $(function() {
-      $("#sortTable").tablesorter();
-    });
     $(document).on('click', '.allow-focus', function (e) {
       e.stopPropagation();
     });
@@ -123,10 +126,6 @@ include_once('./routes/home.php');
         if(flag == 1)
         	$("#myTable tr").show()
         });
-    });
-    $('#Headers th').click(function(){
-    $(this).next('td').slideToggle('500');
-    $(this).find('i').toggleClass('fa fa-sort-up fa fa-sort-down')
     });
     const observer = lozad();
     observer.observe();
