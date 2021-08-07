@@ -65,7 +65,7 @@ include_once('./routes/home.php');
                                     ?>
                                 </tbody>
                             </table>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
