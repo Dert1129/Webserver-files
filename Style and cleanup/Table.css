@@ -94,3 +94,7 @@ table {
 .display-4{
     color: rgb(0,115,182);
 }
+iframe{
+    padding: 1rem;
+    text-align: center;
+}
