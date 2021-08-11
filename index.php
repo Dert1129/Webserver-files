@@ -137,8 +137,7 @@ include_once('./routes/home.php');
         $("#export").on("click",function(){
             $(".table2excel").table2excel({
                 name: "Job Scheduling Information",
-                filename: "Job_Schedule",
-                fileext: ".xls",
+                filename: "Job_Schedule.xls",
                 preserveColors: true,
                 exclude_links: false,
             });
