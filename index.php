@@ -27,6 +27,7 @@ include_once('./routes/home.php');
                 <div class="table-wrapper">
                     <div class="row">
                         <img class="img-responsive" src="./Logo/Technique Logo Cropped.jpg" alt="Techniqueinc Logo"/>
+                        <iframe class="ml-auto" src="./update.html" width="300px" height="100px" frameborder=0></iframe>
                     </div>
                     <div class="row">
                         <div class="display-4 mx-auto">Customer Job Schedule</div>
