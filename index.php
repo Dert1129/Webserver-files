@@ -19,6 +19,7 @@ include_once('./routes/home.php');
     <link rel="stylesheet" id="avia-google-webfont" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CMontserrat" type="text/css" media="all">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <link rel="stylesheet" href="./node_modules/tablesorter/dist/css/theme.bootstrap_4.min.css"/>
+    <script src="./bower_components/jquery-table2excel\dist\jquery.table2excel.min.js"></script>
 </head>
 <body>
     <section>
@@ -43,7 +44,7 @@ include_once('./routes/home.php');
                             </div>     
                         </div>
                         <div class="tableFixHead">
-                            <table id="sortTable" class="table table-striped tablesorter table-sm">
+                            <table id="sortTable" class="table2excel table table-striped tablesorter table-sm">
                                 <thead>
                                     <tr style="text-align: left header" id="Headers">
                                         <th class="col-2">Thumbnail</th>
@@ -69,6 +70,8 @@ include_once('./routes/home.php');
                         </div>
                 </div>
             </div>
+            <button class="btn btn-outline-dark" id="export">Export to Excel</button>
+            <button class="btn btn-outline-dark" id="print" onclick="myApp.printTable()">Print</button>
         </div>
     </section>
     <script>
@@ -130,6 +133,26 @@ include_once('./routes/home.php');
     });
     const observer = lozad();
     observer.observe();
+    $(document).ready(function(){
+        $("#export").on("click",function(){
+            $(".table2excel").table2excel({
+                name: "Job Scheduling Information",
+                filename: "Job_Schedule",
+                fileext: ".xls",
+                preserveColors: true,
+                exclude_links: false,
+            });
+        });
+    });
+    var myApp = new function () {
+        this.printTable = function () {
+            var tab = document.getElementById('sortTable');
+            var win = window.open('', '', 'height=700,width=700');
+            win.document.write(sortTable.outerHTML);
+            win.document.close();
+            win.print();
+        }
+    }
     </script>
 </body>
 </html>
