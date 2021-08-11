@@ -55,7 +55,7 @@ include_once('./routes/home.php');
                                         <th class="col-1">Part Descr</th>
                                         <th class="col-1">Customer PO</th>
                                         <th class="col-1">Quantity</th>
-                                        <th class="col-1" id="ProductColumn">Product Code</th>
+                                        <th class="col-1">Product Code</th>
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
