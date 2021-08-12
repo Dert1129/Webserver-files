@@ -15,11 +15,11 @@ include_once('./routes/home.php');
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style and cleanup/table.css">
-    <script src="./tablesorter/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" id="avia-google-webfont" href="//fonts.googleapis.com/css?family=Open+Sans:400,600%7CMontserrat" type="text/css" media="all">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-    <link rel="stylesheet" href="./node_modules/tablesorter/dist/css/theme.bootstrap_4.min.css"/>
-    <script src="./bower_components/jquery-table2excel\dist\jquery.table2excel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/theme.bootstrap_4.min.css"/>
+    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 </head>
 <body>
     <section>
@@ -139,7 +139,8 @@ include_once('./routes/home.php');
                 name: "Job Scheduling Information",
                 filename: "Job_Schedule.xls",
                 preserveColors: true,
-                exclude_links: false
+                exclude_links: false,
+                exclude_img: true
             });
         });
     });
