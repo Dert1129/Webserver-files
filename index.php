@@ -153,7 +153,7 @@ include_once('./routes/home.php');
             win.print();
         }
     }
-    $(".container").infiniteScroll({
+    $(".container-fluid").infiniteScroll({
         path: ".pagination__next",
         append: ".post",
         history: false,
