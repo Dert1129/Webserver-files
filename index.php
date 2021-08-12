@@ -20,7 +20,6 @@ include_once('./routes/home.php');
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <link rel="stylesheet" href="./node_modules/tablesorter/dist/css/theme.bootstrap_4.min.css"/>
     <script src="./bower_components/jquery-table2excel\dist\jquery.table2excel.min.js"></script>
-    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 </head>
 <body>
     <section>
@@ -153,11 +152,6 @@ include_once('./routes/home.php');
             win.print();
         }
     }
-    $(".container-fluid").infiniteScroll({
-        path: ".pagination__next",
-        append: ".post",
-        history: false,
-    });
     </script>
 </body>
 </html>
