@@ -34,7 +34,7 @@ UPDATE Job_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
-/*Update customer names according to file system. If customer names don't match exactly then the Juob_number Hyperlink won't work*/
+/*Update customer names according to file system. If customer names don't match exactly then the Job_number Hyperlink won't work*/
 UPDATE Job_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";
