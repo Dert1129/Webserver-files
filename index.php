@@ -139,7 +139,7 @@ include_once('./routes/home.php');
                 name: "Job Scheduling Information",
                 filename: "Job_Schedule.xls",
                 preserveColors: true,
-                exclude_links: false,
+                exclude_links: false
             });
         });
     });
