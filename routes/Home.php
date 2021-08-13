@@ -62,7 +62,7 @@ function Home(){
                     echo "<td class='col-2'>". "<img alt=".$row['Thumbnail']." class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
             }
-            echo "<td class='col-1 $text' style='height:8rem'>". mb_strimwidth($row['Technician'],0,15,'...'). "</td>";
+            echo "<td class='col-1 $text' style='height:8rem'>".$row['Technician']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$job."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>". $date. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>". $row['Customer']. "</td>";
