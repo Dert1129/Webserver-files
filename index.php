@@ -39,9 +39,9 @@ include_once('./routes/home.php');
                             <div class='input-group-btn dropdown'>
                                 <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' aria-haspopup='true'aria-expanded='true'>Product Codes<span class='caret'></span></button>
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
-                                    <?php product_Codes();?> 
+                                    <?php product_Codes();?>
                                 </div>
-                            </div>     
+                            </div>
                         </div>
                         <div class='tableFixHead'>
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
@@ -93,20 +93,12 @@ include_once('./routes/home.php');
         $('#selectAll').on('click', function(){
             $('input:checkbox').not(this).prop('checked', this.checked);
             $('#myTable tr').show();
+    	});
     });
-    })
     $(document).ready(function(){
-      $('#myInput').on('input', function() {
+      $('#myInput').on('keyup', function() {
         var value = $(this).val().toLowerCase();
         $('#myTable tr').filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
-    $(document).ready(function(){
-      $('#ddInput').on('keyup', function() {
-        var value = $(this).val().toLowerCase();
-        $('.dropdown-menu li').filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
