@@ -17,7 +17,8 @@ LOAD DATA INFILE "Job Schedule Details.csv"
 INTO TABLE job_schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
-LINES TERMINATED BY "\n";
+LINES TERMINATED BY "\n"
+IGNORE 1 ROWS;
 
 DELETE FROM job_schedule WHERE Technician = "Page -1 of 1";
 
