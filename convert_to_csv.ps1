@@ -1,5 +1,5 @@
 Function ExcelToCsv($File){
-    $myDir = "\\tiws07\dwg\Mfg Mtg\Customer Schedule\"
+    $myDir = "\\tiws07\dwg\Mfg Mtg\Customer Schedule"
     $excelFile = "$myDir\" + $File + ".xlsx"
     $Excel = New-Object -ComObject Excel.Application
     $wb = $Excel.WORKBOOKS.oPEN($ExcelFile)
@@ -15,3 +15,4 @@ $FileName = "Job Schedule Details"
 ExcelToCsv -File $FileName
 Remove-Item -Path "C:\xampp\mysql\data\webserver\Job Schedule Details.csv" -Force
 Move-Item -Path "\\tiws07\dwg\Mfg Mtg\Customer Schedule\Job Schedule Details.csv" -Destination "C:\xampp\mysql\data\webserver\" -Force
+Start-Sleep -Seconds 5
