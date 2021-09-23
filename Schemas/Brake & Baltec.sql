@@ -14,7 +14,7 @@ INTO TABLE Brake_Baltec_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
-IGNORE 2 ROWS;
+IGNORE 1 ROWS;
 
 UPDATE Brake_Baltec_Schedule
 SET Customer = "Ada Metals"
