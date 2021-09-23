@@ -39,7 +39,7 @@ include_once('./routes/brake_schedule.php');
                                 <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' aria-haspopup='true'aria-expanded='true'>Schedules<span class='caret'></span></button>
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
                                     <a class="dropdown-item" href="http://localhost:8080">Customer Job Schedule</a>
-                                    <a class="dropdown-item" href="http://localhost:8080/2D.php">2D Laser Schedule</a>
+                                    <a class="dropdown-item" href="http://localhost:8080/Tube.php">Tube Laser Schedule</a>
                                 </div>
                             </div>
                         </div>
