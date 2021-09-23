@@ -2,7 +2,7 @@
 function Home(){
     require('./includes/dbh.inc.php');
     require("./style and cleanup/pictures.php");
-    $stmt = $conn->prepare("SELECT * FROM Job_Schedule ORDER BY Due_Date ASC;");
+    $stmt = $conn->prepare("SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){
