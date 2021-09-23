@@ -46,6 +46,7 @@ include_once('./routes/brake_schedule.php');
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
                                     <tr style='text-align: left header' id='Headers'>
+                                       <!-- <th class='col-1'>Thumbnail</th>-->     
                                         <th class='col-1'>Technician</th>
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
@@ -57,8 +58,8 @@ include_once('./routes/brake_schedule.php');
                                 </thead>
                                 <tbody id='myTable'>
                                     <?php
-                                        require('./includes/dbh.inc.php');
-                                        require_once('./style and cleanup/pictures.php');
+                                        include_once('./includes/dbh.inc.php');
+                                        include_once("./style and cleanup/pictures.php");
                                         Brake();
                                     ?>
                                 </tbody>
