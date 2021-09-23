@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS Job_Schedule;
 CREATE TABLE Job_Schedule(
 	Technician varchar(50),
+	Technician_Name varchar(50),
 	Job_number varchar(50),
 	Due_Date date,
 	Customer varchar(50),
