@@ -9,7 +9,7 @@ CREATE TABLE Brake_Baltec_Schedule(
     Qty text
 );
 
-LOAD DATA INFILE "Job Schedue Detail-BrakeBaltec.csv"
+LOAD DATA INFILE "Job Schedule Detail-BrakeBaltec.csv"
 INTO TABLE Brake_Baltec_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
