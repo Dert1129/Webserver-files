@@ -1,6 +1,6 @@
 <?php 
 function Brake(){
-    require('./includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Brake_Baltec_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 

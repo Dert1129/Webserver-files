@@ -1,6 +1,6 @@
 <?php 
 function Tube(){
-    require('./includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Tube_Laser_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 

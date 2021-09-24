@@ -1,6 +1,6 @@
 <?php 
 function weld(){
-    require('./includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM WeldAssy_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 

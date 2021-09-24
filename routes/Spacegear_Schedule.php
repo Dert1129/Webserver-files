@@ -1,6 +1,6 @@
 <?php 
 function spacegear(){
-    require('./includes/dbh.inc.php');
+    require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Spacegear_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 

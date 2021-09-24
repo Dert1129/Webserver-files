@@ -1,5 +1,5 @@
 <?php
-include_once('./routes/Spacegear_schedule.php');
+include_once('../routes/Spacegear_schedule.php');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -26,8 +26,8 @@ include_once('./routes/Spacegear_schedule.php');
             <div class='table-responsive'>
                 <div class='table-wrapper'>
                     <div class='row'>
-                        <img class='img-responsive' src='./Logo/Technique Logo Cropped.jpg' alt='Techniqueinc Logo'/>
-                        <iframe class='ml-auto' src='./update.html' width='300px' height='100px' frameborder=0></iframe>
+                        <img class='img-responsive' src='../Logo/Technique Logo Cropped.jpg' alt='Techniqueinc Logo'/>
+                        <iframe class='ml-auto' src='../update.html' width='300px' height='100px' frameborder=0></iframe>
                     </div>
                     <div class='row'>
                         <div class='display-4 mx-auto'>Spacegear Schedule</div>
@@ -60,7 +60,7 @@ include_once('./routes/Spacegear_schedule.php');
                                 </thead>
                                 <tbody id='myTable'>
                                     <?php
-                                        include_once('./includes/dbh.inc.php');
+                                        include_once('../includes/dbh.inc.php');
                                         spacegear();
                                     ?>
                                 </tbody>
