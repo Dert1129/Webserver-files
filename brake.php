@@ -40,6 +40,7 @@ include_once('./routes/brake_schedule.php');
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
                                     <a class="dropdown-item" href="http://localhost:8080">Customer Job Schedule</a>
                                     <a class="dropdown-item" href="http://localhost:8080/Tube.php">Tube Laser Schedule</a>
+                                    <a class="dropdown-item" href="http://localhost:8080/spacegear.php">Spacegear Schedule</a>
                                 </div>
                             </div>
                         </div>
