@@ -6,7 +6,7 @@ Function ExcelToCsv($File){
 
     foreach ($ws in $wb.Worksheets){
         $Excel.DisplayAlerts = $false;
-        $ws.Columns("D").NumberFormat = "yyyy-mm-dd"
+        $ws.Columns("C").NumberFormat = "yyyy-mm-dd"
         $ws.SaveAs("$myDir\" + $File + ".csv", 6)
     }
     $Excel.Quit()
