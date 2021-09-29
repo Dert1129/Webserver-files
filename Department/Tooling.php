@@ -38,10 +38,11 @@ include_once('../routes/Tooling_schedule.php');
                             <div class='input-group-btn dropdown'>
                                 <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' aria-haspopup='true'aria-expanded='true'>Schedules<span class='caret'></span></button>
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
-                                <a class="dropdown-item" href="http://195.100.202.209:8080">Customer Job Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080">Customer Job Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/spacegear.php">Spacegear Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling.php">Tooling Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling_parts.php">Tooling Parts Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/bender.php">Tube Bender Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tube.php">Tube Laser Schedule</a>
