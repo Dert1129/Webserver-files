@@ -1,7 +1,8 @@
 <?php 
 function Home(){
+    //require("./update_thumbnail.php");
     require('./includes/dbh.inc.php');
-    require("./style and cleanup/pictures.php");
+    //require("./style and cleanup/pictures.php");
     $stmt = $conn->prepare("SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
@@ -25,43 +26,27 @@ function Home(){
             echo "<tr>";
             if($date < $current_date){
                 $text = "text-danger";
-                if(strlen($row["Part_Number"])==2){
-                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
-                    $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
-                    $Thumbnail = $row['Part_Number'];
-                    $stmt->execute();
-                    echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
-                }elseif ($row['Part_Number']=="PACKAGING") {
-                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
-                    $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
-                    $Packaging = "PACKAGING";
-                    $stmt->execute();
-                    echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
-                }elseif($row['Thumbnail']=="No image available.png"){
-                    echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-                }else{
-                    echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-                }
             }else{
                 $text = "";
-                if(strlen($row["Part_Number"])==2){
-                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
-                    $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
-                    $Thumbnail = $row['Part_Number'];
-                    $stmt->execute();
-                    echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
-                }elseif ($row['Part_Number']=="PACKAGING") {
-                    $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
-                    $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
-                    $Packaging = "PACKAGING";
-                    $stmt->execute();
-                    echo "<td class='col-2 $text' style='height:122.59px'>".$row['Thumbnail']."</td>";
-                }elseif($row['Thumbnail']=="No image available.png"){
-                    echo "<td class='col-2'>". "<img id='Thumbnail' alt='No Image Available' class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-                }else{
-                    echo "<td class='col-2'>". "<img alt=".$row['Thumbnail']." class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-                }
             }
+            if(strlen($row["Part_Number"])==2){
+                $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
+                $Thumbnail = $row['Part_Number'];
+                $stmt->execute();
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif ($row['Part_Number']=="PACKAGING") {
+                $stmt = $conn->prepare("UPDATE Job_Schedule SET Thumbnail = ? WHERE Part_Number = ?;");
+                $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
+                $Packaging = "PACKAGING";
+                $stmt->execute();
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif($row['Thumbnail']=="No image available.png"){
+                echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }else{
+                echo "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }
+            //echo $Thumbnail;
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Technician']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$job."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>". $date. "</td>";

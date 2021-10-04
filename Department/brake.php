@@ -41,6 +41,7 @@ include_once('../routes/brake_schedule.php');
                                     <a class="dropdown-item" href="http://195.100.202.209:8080">Customer Job Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledSheet.php">Rolled Sheet Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/spacegear.php">Spacegear Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling.php">Tooling Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling_parts.php">Tooling Parts Schedule</a>
