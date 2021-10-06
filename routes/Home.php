@@ -1,8 +1,6 @@
 <?php 
 function Home(){
-    //require("./update_thumbnail.php");
     require('./includes/dbh.inc.php');
-    //require("./style and cleanup/pictures.php");
     $stmt = $conn->prepare("SELECT * FROM Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
