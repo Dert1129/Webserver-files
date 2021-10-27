@@ -10,12 +10,15 @@ CREATE TABLE 2D_Laser_Schedule(
     BOM varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail-2D Laser.csv"
+LOAD DATA INFILE "2D_Laser_Schedule.csv"
 INTO TABLE 2D_Laser_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM 2D_Laser_Schedule
+WHERE Job_Number = "";
 
 UPDATE 2D_Laser_Schedule
 SET Customer = "Ada Metals"

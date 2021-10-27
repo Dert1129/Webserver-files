@@ -9,12 +9,15 @@ CREATE TABLE Brake_Baltec_Schedule(
     Qty text
 );
 
-LOAD DATA INFILE "Job Schedule Detail-BrakeBaltec.csv"
+LOAD DATA INFILE "Brake_Baltec_Schedule.csv"
 INTO TABLE Brake_Baltec_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM Brake_Baltec_Schedule
+WHERE Job_Number = "";
 
 UPDATE Brake_Baltec_Schedule
 SET Customer = "Ada Metals"

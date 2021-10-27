@@ -11,12 +11,14 @@ CREATE TABLE Rolled_Sheet_Schedule(
     Type varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail-RolledSheet.csv"
+LOAD DATA INFILE "Rolled Shells_Schedule.csv"
 INTO TABLE Rolled_Sheet_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM Rolled_Sheet_Schedule WHERE Job_number = "";
 
 UPDATE Rolled_Sheet_Schedule
 SET Customer = "Ada Metals"

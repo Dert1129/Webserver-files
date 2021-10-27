@@ -9,12 +9,15 @@ CREATE TABLE Tooling_Schedule(
 	Work_Center varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail-Tooling.csv"
+LOAD DATA INFILE "Tooling_TLs_Schedule.csv"
 INTO TABLE Tooling_Schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
 LINES TERMINATED BY "\n"
 IGNORE 1 ROWS;
+
+DELETE FROM Tooling_Schedule
+WHERE Job_Number = "";
 
 UPDATE Tooling_Schedule
 SET Part_Number = replace(Part_Number,"/","");

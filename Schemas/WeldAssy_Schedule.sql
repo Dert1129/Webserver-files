@@ -9,12 +9,15 @@ CREATE TABLE WeldAssy_Schedule(
     Technician varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail-WeldAssy.csv"
+LOAD DATA INFILE "WeldDept-JobsDueList.csv"
 INTO TABLE WeldAssy_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM WeldAssy_Schedule
+WHERE Job_Number = "";
 
 UPDATE WeldAssy_Schedule
 SET Customer = "Ada Metals"

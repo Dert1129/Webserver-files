@@ -10,12 +10,14 @@ CREATE TABLE Tube_Bender_Schedule(
     Technician varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail-Tube Bender.csv"
+LOAD DATA INFILE "Job Schedue Detail-TubeBend.csv"
 INTO TABLE Tube_Bender_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM Tube_Bender_Schedule WHERE Job_number = "";
 
 UPDATE Tube_Bender_Schedule
 SET Customer = "Ada Metals"

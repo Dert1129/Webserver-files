@@ -9,12 +9,15 @@ CREATE TABLE Spacegear_Schedule(
     QtyLeft text
 );
 
-LOAD DATA INFILE "Job Schedule Detail-Spacegear.csv"
+LOAD DATA INFILE "SpaceGear_Schedule.csv"
 INTO TABLE Spacegear_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
+
+DELETE FROM Spacegear_Schedule
+WHERE Job_Number = "";
 
 UPDATE Spacegear_Schedule
 SET Customer = "Ada Metals"
