@@ -35,10 +35,26 @@ include_once('../routes/Customer_Schedule.php');
                         <div class='input-group mb-3 row mx-auto my-auto'>
                             <input type='text' class='form-control' placeholder='Search..' id='myInput'>
                             <button alt="Clear Search Button" id ="clearSearch" type="button" class="btn btn-outline-dark" onclick="document.querySelector('.form-control').value = ''"><i class='fa fa-times' aria-hidden='true'></i></button>
-                            <div class='input-group-btn dropdown'>
+                            <div class='input-group-append dropdown'>
                                 <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' aria-haspopup='true'aria-expanded='true'>Product Codes<span class='caret'></span></button>
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
                                     <?php product_Codes();?>
+                                </div>
+                                <div class="dropdown dropright">
+                                    <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' ariahaspopup='true' ariaexpanded='false'>Schedules<span class='caret'></span></button>
+                                        <div class='dropdown-menu allow-focus' aria-labelledby='dd'>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080">Customer Job Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledSheet.php">Rolled Sheet Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/spacegear.php">Spacegear Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Stamping.php">Stamping Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling.php">Tooling Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling_parts.php">Tooling Parts Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/bender.php">Tube Bender Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tube.php">Tube Laser Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/weld.php">WeldAssy Schedule</a>
+                                        </div>
                                 </div>
                             </div>
                         </div>
