@@ -20,6 +20,16 @@ IGNORE 1 ROWS;
 DELETE FROM Tooling_Parts_Schedule
 WHERE Job_Number = "";
 
+alter table Tooling_Parts_Schedule
+add Thumbnail text;
+
+UPDATE Tooling_Parts_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Tooling_Parts_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE Tooling_Parts_Schedule
 SET Part_Number = replace(Part_Number,"/","");
 
