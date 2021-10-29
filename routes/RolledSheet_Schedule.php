@@ -27,6 +27,15 @@ function Rolled_Sheet_Schedule(){
             }else{
                 $text = "";
             }
+            if(strlen($row["Part_Number"])==2){
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif ($row['Part_Number']=="PACKAGING") {
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif($row['Thumbnail']=="No image available.png"){
+                echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }else{
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Technician']. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$job."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$date. "</td>";
