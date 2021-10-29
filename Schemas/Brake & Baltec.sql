@@ -19,6 +19,16 @@ IGNORE 1 ROWS;
 DELETE FROM Brake_Baltec_Schedule
 WHERE Job_Number = "";
 
+alter table Brake_Baltec_Schedule
+add Thumbnail text;
+
+UPDATE Brake_Baltec_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Brake_Baltec_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE Brake_Baltec_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";
