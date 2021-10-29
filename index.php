@@ -1,5 +1,4 @@
 <?php
-include_once('./Style and cleanup/Pictures.php');
 include_once('./routes/home.php');
 ?>
 <!DOCTYPE html>
@@ -62,7 +61,7 @@ include_once('./routes/home.php');
                                 <tbody id='myTable'>
                                     <?php
                                         require('./includes/dbh.inc.php');
-                                        require_once('./style and cleanup/pictures.php');
+                                        //require_once('./style and cleanup/pictures.php');
                                         Home();
                                     ?>
                                 </tbody>
