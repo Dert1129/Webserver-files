@@ -16,6 +16,9 @@ ENCLOSED BY '"'
 LINES TERMINATED BY "\n"
 IGNORE 1 ROWS;
 
+alter table Tooling_Schedule
+add Thumbnail text;
+
 DELETE FROM Tooling_Schedule
 WHERE Job_Number = "";
 
