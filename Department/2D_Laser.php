@@ -56,7 +56,7 @@ include_once('../routes/2D_Laser_Schedule.php');
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
                                     <tr style='text-align: left header' id='Headers'> 
-                                        <th class='col-1'>Thumbnail</th>  
+                                        <th class='col-2'>Thumbnail</th>  
                                         <th class='col-1'>Customer</th>
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
@@ -64,7 +64,7 @@ include_once('../routes/2D_Laser_Schedule.php');
                                         <th class='col-1'>Revsion</th>
                                         <th class="col-1">Open</th>
                                         <th class='col-1'>Original</th>
-                                        <th class='col-1'>BOM</th>
+                                        <th class='col-1'>BOM Level</th>
                                     </tr>
                                 </thead>
                                 <tbody id='myTable'>
