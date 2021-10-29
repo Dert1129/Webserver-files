@@ -50,4 +50,7 @@
 
     $tablename = '2D_Laser_Schedule';
     table($tablename);
+
+    //$tablename = "Brake_Baltec_Schedule";
+    //table($tablename);
 ?>
