@@ -27,7 +27,6 @@ function _2D_Laser_Schedule(){
             }else{
                 $text = "";
             }
-            
             if(strlen($row["Part_Number"])==2){
                 echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
             }elseif ($row['Part_Number']=="PACKAGING") {
