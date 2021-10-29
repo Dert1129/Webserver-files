@@ -1,5 +1,4 @@
 <?php
-//include_once('./Style and cleanup/Pictures.php');
 include_once('../routes/Customer_Schedule.php');
 ?>
 <!DOCTYPE html>
@@ -62,8 +61,7 @@ include_once('../routes/Customer_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         require('../includes/dbh.inc.php');
-                                        require_once('../style and cleanup/pictures.php');
-                                        include_once('../routes/Customer_Schedule.php');
+                                        //require_once('./style and cleanup/pictures.php');
                                         Home();
                                     ?>
                                 </tbody>
