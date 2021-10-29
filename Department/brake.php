@@ -55,7 +55,8 @@ include_once('../routes/brake_schedule.php');
                         <div class='tableFixHead'>
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
-                                    <tr style='text-align: left header' id='Headers'>   
+                                    <tr style='text-align: left header' id='Headers'>  
+                                        <th class="col-2">Thumbnails</th> 
                                         <th class='col-1'>Technician</th>
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
@@ -128,6 +129,8 @@ include_once('../routes/brake_schedule.php');
         	$('#myTable tr').show()
         });
     });
+    const observer.lozad();
+    observer.observe();
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
