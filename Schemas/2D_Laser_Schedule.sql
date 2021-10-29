@@ -20,6 +20,16 @@ IGNORE 1 ROWS;
 DELETE FROM 2D_Laser_Schedule
 WHERE Job_Number = "";
 
+alter table 2D_Laser_Schedule
+add Thumbnail text;
+
+UPDATE 2D_Laser_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE 2D_Laser_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE 2D_Laser_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";

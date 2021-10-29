@@ -55,7 +55,8 @@ include_once('../routes/2D_Laser_Schedule.php');
                         <div class='tableFixHead'>
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
-                                    <tr style='text-align: left header' id='Headers'>   
+                                    <tr style='text-align: left header' id='Headers'> 
+                                        <th class='col-1'>Thumbnail</th>  
                                         <th class='col-1'>Customer</th>
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
@@ -129,6 +130,8 @@ include_once('../routes/2D_Laser_Schedule.php');
         	$('#myTable tr').show()
         });
     });
+    const observer = lozad();
+    observer.observe();
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
