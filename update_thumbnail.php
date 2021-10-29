@@ -30,17 +30,11 @@
                     $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
                     $Thumbnail = $row['Part_Number'];
                     $stmt->execute();
-                    $Thumbnail = "<td class='col-1 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
                 }elseif ($row['Part_Number']=="PACKAGING") {
                     $stmt = $conn->prepare("UPDATE $tablename SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
                     $Packaging = "PACKAGING";
                     $stmt->execute();
-                    $Thumbnail = "<td class='col-1 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
-                }elseif($row['Thumbnail']=="No image available.png"){
-                    $Thumbnail = "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-                }else{
-                    $Thumbnail = "<td class='col-2'>". "<img class='lozad' data-src='./Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
                 }
             }
         }
@@ -53,4 +47,7 @@
 
     //$tablename = "Brake_Baltec_Schedule";
     //table($tablename);
+
+    $tablename = "Rolled_Sheet_Schedule";
+    table($tablename);
 ?>
