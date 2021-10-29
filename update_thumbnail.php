@@ -50,4 +50,7 @@
 
     $tablename = "Rolled_Sheet_Schedule";
     table($tablename);
+
+    $tablename = 'Spacegear_Schedule';
+    table($tablename);
 ?>

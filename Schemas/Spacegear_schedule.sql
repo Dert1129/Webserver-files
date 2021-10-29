@@ -19,6 +19,16 @@ IGNORE 1 ROWS;
 DELETE FROM Spacegear_Schedule
 WHERE Job_Number = "";
 
+alter table Spacegear_Schedule
+add Thumbnail text;
+
+UPDATE Spacegear_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Spacegear_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE Spacegear_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";
