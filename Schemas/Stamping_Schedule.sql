@@ -21,6 +21,16 @@ IGNORE 1 ROWS;
 DELETE FROM Stamping_Schedule
 WHERE Job_Number = "";
 
+alter table Stamping_Schedule
+add Thumbnail text;
+
+UPDATE Stamping_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Stamping_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE Stamping_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";
