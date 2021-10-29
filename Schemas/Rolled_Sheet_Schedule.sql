@@ -20,6 +20,16 @@ IGNORE 1 ROWS;
 
 DELETE FROM Rolled_Sheet_Schedule WHERE Job_number = "";
 
+alter table Rolled_Sheet_Schedule
+add Thumbnail text;
+
+UPDATE Rolled_Sheet_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Rolled_Sheet_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
+
 UPDATE Rolled_Sheet_Schedule
 SET Customer = "Ada Metals"
 WHERE Customer = "ADA Metal Products Inc";
