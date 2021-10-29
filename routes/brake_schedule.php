@@ -43,6 +43,8 @@ function Brake(){
                 echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
             }elseif($row['Thumbnail']=="No image available.png"){
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row['Part_Number']==''){
+                echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/No image available.png' width='170px' height='112px'>". "</td>";
             }else{
                 echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             }
