@@ -1,27 +1,19 @@
-To launch server:
-    1. Open xampp
-    2. click start on apache 
-    3. Click start on MySQL 
-    
-To view job table:
-    1. Type ip address of machine into browser, followed by a colon and 8080 (ex: 127.0.0.1:8080)
- 
- Task Scheduler
-    1. Create Task
-    2. Triggers tab: 00:00:00AM/PM 
-    3. Go to actions tab and click on New...
-    4. Action: Start a program 
-    5. Program to run: C:\xampp\php\php.exe
-    6. Arguements: -f "\\tiws07\dwg\Mfg Mtg\Nathan\Webserver files\execute_sql.php"
-    7. Click ok
-    8. Uncheck anyt boxes in conditions Tab 
-    9. Go to settings tab
-    10. Make sure these are checked:
-        1. Allow task to be run on demand
-        2. Run task as soon as possile after a scheduled start is missed
-        3. If the task fails, restart every: 10 minutes
-        4. If the running task does not end when requested, force it to stop
-    11. Find "If the task is already running, then the following applies:
-    12. Click on the drop down and choose "Run a new instance in paralell"
-    13. Done.
-    
+How to fix dead links:
+    Dead links can be caused by a few things:
+        1. Job Number
+        2. Incorrect Customer Name
+        3. Job Folder does not exist (currently)
+
+    Number 1.
+        Job Numbers are always generated regardless if the job is a repeat. However, if the job is a repeat the file system will already have the old job number with everything stored inside. The only thing that links the "new" job number and the old job number is the Routing Sheet.
+        
+        Fix:
+            Create a shortcut inside of \\tiws07\dwg\Customer\year\Customer_Name\Jobs\ that is of the "new" job number, and link it to wherever the old job number is. The site will now seamlessly follow where the shortcut is, and then the user is able to view everything inside of the job folder.
+
+    Number 2.
+        Customer Names on the site also follow what the name of the customers are in the FILESYSTEM. This means that a functional link looks like \\tiws07\dwg\Customer\2021\Cummins. While a dead link looks like \\tiws07\dwg\Customer\2021\CUMMINS EMMISSIONS SOLUTIONS. They are the same customer, howver the site can't relate the two together. 
+
+        Fix:
+            All customer names in the file system MUST be named the exact same as they are in E2. This comes with a catch. Inside of Schemas\pick_a_file.sql I have a large list of many sql queries that change the E2 names to the names in the filesystem. Depending on how this site is used looking forward, you can delete those lines and this will effect any previous jobs from 2021. THISS WILL KILL ALL LINKS THAT CURRENTLY WORK FOR THE 2021 FOLDER. So think about this before deleting all of those lines.
+
+            
