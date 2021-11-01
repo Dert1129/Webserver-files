@@ -13,8 +13,7 @@ LOAD DATA INFILE "Brake_Baltec_Schedule.csv"
 INTO TABLE Brake_Baltec_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Brake_Baltec_Schedule
 WHERE Job_Number = "";

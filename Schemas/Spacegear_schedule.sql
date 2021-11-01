@@ -13,8 +13,7 @@ LOAD DATA INFILE "SpaceGear_Schedule.csv"
 INTO TABLE Spacegear_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Spacegear_Schedule
 WHERE Job_Number = "";

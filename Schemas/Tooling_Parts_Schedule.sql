@@ -14,8 +14,7 @@ LOAD DATA INFILE "Tooling_Parts_Schedule.csv"
 INTO TABLE Tooling_Parts_Schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
-LINES TERMINATED BY "\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Tooling_Parts_Schedule
 WHERE Job_Number = "";

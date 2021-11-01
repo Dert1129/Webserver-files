@@ -13,11 +13,23 @@ LOAD DATA INFILE "WeldDept-JobsDueList.csv"
 INTO TABLE WeldAssy_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM WeldAssy_Schedule
 WHERE Job_Number = "";
+
+alter table WeldAssy_Schedule
+add Thumbnail text;
+
+DELETE FROM WeldAssy_Schedule
+WHERE Job_Number = "";
+
+UPDATE WeldAssy_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE WeldAssy_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
 
 UPDATE WeldAssy_Schedule
 SET Customer = "Ada Metals"

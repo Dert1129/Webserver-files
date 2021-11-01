@@ -14,8 +14,7 @@ LOAD DATA INFILE "TubeLaser_Schedule.csv"
 INTO TABLE Tube_Laser_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 2 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Tube_Laser_Schedule
 WHERE Job_Number = "";

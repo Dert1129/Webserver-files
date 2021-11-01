@@ -13,8 +13,7 @@ LOAD DATA INFILE "Tooling_TLs_Schedule.csv"
 INTO TABLE Tooling_Schedule
 FIELDS TERMINATED BY ","
 ENCLOSED BY '"'
-LINES TERMINATED BY "\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 alter table Tooling_Schedule
 add Thumbnail text;

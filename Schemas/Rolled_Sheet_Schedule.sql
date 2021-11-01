@@ -15,8 +15,7 @@ LOAD DATA INFILE "Rolled Shells_Schedule.csv"
 INTO TABLE Rolled_Sheet_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Rolled_Sheet_Schedule WHERE Job_number = "";
 

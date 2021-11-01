@@ -14,8 +14,7 @@ LOAD DATA INFILE "2D_Laser_Schedule.csv"
 INTO TABLE 2D_Laser_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM 2D_Laser_Schedule
 WHERE Job_Number = "";

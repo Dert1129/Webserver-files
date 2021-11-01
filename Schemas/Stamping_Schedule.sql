@@ -15,8 +15,7 @@ LOAD DATA INFILE "Stamping_Schedule.csv"
 INTO TABLE Stamping_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Stamping_Schedule
 WHERE Job_Number = "";

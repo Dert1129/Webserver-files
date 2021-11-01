@@ -14,8 +14,7 @@ LOAD DATA INFILE "Bender_Schedule.csv"
 INTO TABLE Tube_Bender_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n"
-IGNORE 1 ROWS;
+LINES TERMINATED BY "\r\n";
 
 DELETE FROM Tube_Bender_Schedule WHERE Due_Date = "";
 
