@@ -10,14 +10,27 @@ CREATE TABLE Tube_Bender_Schedule(
     Technician varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedue Detail-TubeBend.csv"
+LOAD DATA INFILE "Bender_Schedule.csv"
 INTO TABLE Tube_Bender_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
 IGNORE 1 ROWS;
 
-DELETE FROM Tube_Bender_Schedule WHERE Job_number = "";
+DELETE FROM Tube_Bender_Schedule WHERE Due_Date = "";
+
+alter table Tube_Bender_Schedule
+add Thumbnail text;
+
+DELETE FROM Tube_Bender_Schedule
+WHERE Job_Number = "";
+
+UPDATE Tube_Bender_Schedule
+SET Part_Number = replace(Part_Number,"/","");
+
+UPDATE Tube_Bender_Schedule
+SET Thumbnail = "No image available.png"
+WHERE Thumbnail IS NULL;
 
 UPDATE Tube_Bender_Schedule
 SET Customer = "Ada Metals"

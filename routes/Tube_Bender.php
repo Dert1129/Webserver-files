@@ -18,11 +18,26 @@ function Bender(){
             }elseif(is_dir($altPath)){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }echo "<tr>";
+            }else{
+                $job = $row['Job_number'];
+            }
+            echo "<tr>";
             if($date < $current_date){
                 $text = "text-danger";
             }else{
                 $text = "";
+            }
+            if(strlen($row["Part_Number"])==2){
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif ($row['Part_Number']=="PACKAGING") {
+                echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
+            }elseif($row['Thumbnail']=="No image available.png"){
+                echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row['Part_Number']==''){
+                echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/No image available.png' width='170px' height='112px'>". "</td>";
+            }
+            else{                     
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             }
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Technician']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$job."</td>";
