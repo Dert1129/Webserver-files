@@ -1,6 +1,6 @@
 Function ExcelToCsv($File){
     $myDir = "\\tiws07\dwg\Mfg Mtg\Customer Schedule"
-    $excelFile = "$myDir\" + $File + ".xlsx"
+    $excelFile = "$myDir\" + $File + ".csv"
     $Excel = New-Object -ComObject Excel.Application
     $wb = $Excel.WORKBOOKS.oPEN($ExcelFile)
 
@@ -10,16 +10,8 @@ Function ExcelToCsv($File){
         $ws.SaveAs("$myDir\" + $File + ".csv", 6)
     }
     $Excel.Quit()
+    Remove-Item -Path "C:\xampp\mysql\data\webserver\$FileName.csv" -Force
+    Move-Item -Path "\\tiws07\dwg\Mfg Mtg\Customer Schedule\$FileName.csv" -Destination "C:\xampp\mysql\data\webserver\" -Force
 }
-$FileName = "Job Schedule Details"
+$FileName = "Stamping_Schedule"
 ExcelToCsv -File $FileName
-Remove-Item -Path "C:\xampp\mysql\data\webserver\Job Schedule Details.csv" -Force
-Move-Item -Path "\\tiws07\dwg\Mfg Mtg\Customer Schedule\Job Schedule Details.csv" -Destination "C:\xampp\mysql\data\webserver\" -Force
-
-#$FileName = "Job Schedue Detail-BrakeBaltec"
-#ExcelToCsv -File $FileName
-#Remove-Item -Path "C:\xampp\mysql\data\webserver\Job Schedue Detail-BrakeBaltec.csv" -Force
-#Move-Item -Path "\\tiws07\dwg\Mfg Mtg\Customer Schedule\Job Schedue Detail-BrakeBaltec.csv" -Destination "C:\xampp\mysql\data\webserver\" -Force
-
-
-Start-Sleep -Seconds 3
