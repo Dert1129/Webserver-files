@@ -131,7 +131,7 @@ include_once('../routes/Tube_Bender.php');
         });
     });
     const observer = lozad();
-    oberver.observe();
+    observer.observe();
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
