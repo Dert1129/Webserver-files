@@ -62,4 +62,5 @@
 
     table("Tooling_Schedule");*/
     table("Tube_Bender_Schedule");
+    table('Tube_Laser_Schedule')
 ?>
