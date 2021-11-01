@@ -39,28 +39,15 @@
             }
         }
     }/*
-    $tablename = "Job_Schedule";
     table("Job_Schedule");
-
-    $tablename = '2D_Laser_Schedule';
     table('2D_Laser_Schedule');
-
-    //$tablename = "Brake_Baltec_Schedule";
-    //table("Brake_Baltec_Schedule");
-
-    $tablename = "Rolled_Sheet_Schedule";
+    table("Brake_Baltec_Schedule");
     table("Rolled_Sheet_Schedule");
-
-    $tablename = 'Spacegear_Schedule';
     table('Spacegear_Schedule');
-
-    $tablename = "Stamping_Schedule";
     table"Stamping_Schedule");
-
-    //$tablename = "Tooling_Parts_Schedule";
-    //table("Tooling_Parts_Schedule");
-
-    table("Tooling_Schedule");*/
+    table("Tooling_Parts_Schedule");
+    table("Tooling_Schedule");
     table("Tube_Bender_Schedule");
-    table('Tube_Laser_Schedule')
+    table('Tube_Laser_Schedule');
+    table('WeldAssy_Schedule');*/
 ?>
