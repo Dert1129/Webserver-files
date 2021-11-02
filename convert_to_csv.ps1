@@ -13,5 +13,23 @@ Function ExcelToCsv($File){
     Remove-Item -Path "C:\xampp\mysql\data\webserver\$FileName.csv" -Force
     Move-Item -Path "\\tiws07\dwg\Mfg Mtg\Customer Schedule\$FileName.csv" -Destination "C:\xampp\mysql\data\webserver\" -Force
 }
-$FileName = "Stamping_Schedule"
+$FileName = "Job Schedule Details"
 ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
+#$FileName = "Job Schedule Details"
+#ExcelToCsv -File $FileName
