@@ -77,7 +77,6 @@ include_once('../routes/Customer_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         require('../includes/dbh.inc.php');
-                                        //require_once('./style and cleanup/pictures.php');
                                         Home();
                                     ?>
                                 </tbody>
