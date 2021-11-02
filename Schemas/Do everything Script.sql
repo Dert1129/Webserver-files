@@ -35,6 +35,18 @@ UPDATE Job_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
+UPDATE job_schedule 
+SET Thumbnail = "Big Steel Rack logo.png" 
+WHERE Product_Code = "BSR\r";
+
+UPDATE job_schedule 
+SET Thumbnail = "Tooling.png" 
+WHERE Product_Code = "TL\r";
+
+UPDATE job_schedule 
+SET Thumbnail = "Setup.png" 
+WHERE Product_Code = "SU\r";
+
 /*Update customer names according to file system. If customer names don't match exactly then the Job_number Hyperlink won't work*/
 UPDATE Job_Schedule
 SET Customer = "Ada Metals"
