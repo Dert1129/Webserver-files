@@ -17,12 +17,12 @@ function Customer_Schedule($Filename){
             mkdir ($dir, 0744);
         }
     }
-    Customer_Schedule("Do everything Script.sql");
-    /*Customer_Schedule("Brake & Baltec.sql");
+    /*Customer_Schedule("Do everything Script.sql");
+    Customer_Schedule("Brake & Baltec.sql");
     Customer_Schedule("2D_Laser_Schedule.sql");
     Customer_Schedule("Rolled_Sheet_Schedule.sql");
-    Customer_Schedule("Spacegear_schedule.sql");
-    Customer_Schedule("Stamping_Schedule.sql");
+    Customer_Schedule("Spacegear_schedule.sql");*/
+    Customer_Schedule("Stamping_Schedule.sql");/*
     Customer_Schedule("Tooling_Parts_Schedule.sql");
     Customer_Schedule("Tooling_Schedule.sql");
     Customer_Schedule("Tube_Bender_Schedule.sql");
