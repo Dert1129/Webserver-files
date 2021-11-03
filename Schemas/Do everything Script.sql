@@ -47,6 +47,22 @@ UPDATE job_schedule
 SET Thumbnail = "Setup.png" 
 WHERE Product_Code = "SU\r";
 
+UPDATE job_schedule 
+SET Thumbnail = "Pit Products.png" 
+WHERE Product_Code = "PITPRODUCTS\r";
+
+UPDATE job_schedule 
+SET Thumbnail = "Engineering.png" 
+WHERE Product_Code = "ENG\r";
+
+UPDATE job_schedule 
+SET Thumbnail = "Fixture.png" 
+WHERE Product_Code = "FIXT\r";
+
+UPDATE job_schedule 
+SET Thumbnail = "Hardware.png" 
+WHERE Product_Code = "HW\r";
+
 /*Update customer names according to file system. If customer names don't match exactly then the Job_number Hyperlink won't work*/
 UPDATE Job_Schedule
 SET Customer = "Ada Metals"

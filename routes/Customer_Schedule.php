@@ -31,8 +31,15 @@ function Home(){
                 echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             }elseif($row["Product_Code"]=="SU\r"){
                 echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-            }
-            elseif ($row['Part_Number']=="PACKAGING") {
+            }elseif($row["Product_Code"]=="PITPRODUCTS\r"){
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row["Product_Code"]=="ENG\r"){
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row["Product_Code"]=="FIXT\r"){
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row["Product_Code"]=="HW\r"){
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif ($row['Part_Number']=="PACKAGING") {
                 echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
             }elseif($row['Part_Number']==' '){
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/No image available.png' width='170px' height='112px'>". "</td>";
