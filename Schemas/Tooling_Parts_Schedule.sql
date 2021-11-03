@@ -26,7 +26,7 @@ UPDATE Tooling_Parts_Schedule
 SET Part_Number = replace(Part_Number,"/","");
 
 UPDATE Tooling_Parts_Schedule
-SET Thumbnail = "No image available.png"
+SET Thumbnail = "Tooling.png"
 WHERE Thumbnail IS NULL;
 
 UPDATE Tooling_Parts_Schedule
