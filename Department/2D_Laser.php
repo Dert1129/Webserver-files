@@ -135,8 +135,8 @@ include_once('../routes/2D_Laser_Schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Job Scheduling Information',
-                filename: 'Job_Schedule.xls',
+                name: '2D Laser Information',
+                filename: '2D_Laser.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

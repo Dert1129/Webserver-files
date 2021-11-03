@@ -135,8 +135,8 @@ include_once('../routes/Tube_schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Job Scheduling Information',
-                filename: 'Job_Schedule.xls',
+                name: 'Tube Laser Schedule',
+                filename: 'Tube_Laser_Schedule.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

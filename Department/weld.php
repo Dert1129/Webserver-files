@@ -134,8 +134,8 @@ include_once('../routes/WeldAssy_schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Job Scheduling Information',
-                filename: 'Job_Schedule.xls',
+                name: 'WeldAssy Schedule',
+                filename: 'WeldAssy_Schedule.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

@@ -142,8 +142,8 @@ include_once('../routes/Customer_Schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Job Scheduling Information',
-                filename: 'Job_Schedule.xls',
+                name: 'Customer Job Information',
+                filename: 'Customer_Jobs.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

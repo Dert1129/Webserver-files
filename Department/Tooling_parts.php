@@ -135,8 +135,8 @@ include_once('../routes/Tooling_Parts_Schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Job Scheduling Information',
-                filename: 'Job_Schedule.xls',
+                name: 'Tooling Parts Schedule',
+                filename: 'Tooling_Parts_Schedule.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true
