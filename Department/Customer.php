@@ -43,7 +43,7 @@ include_once('../routes/Customer_Schedule.php');
                                 <div class="dropdown dropright">
                                     <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' ariahaspopup='true' ariaexpanded='false'>Schedules<span class='caret'></span></button>
                                         <div class='dropdown-menu allow-focus' aria-labelledby='dd'>
-                                            <a class="dropdown-item" href="http://195.100.202.209:8080">Customer Job Schedule</a>
+                                            <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Customer.php">Customer Job Schedule</a>
                                             <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
                                             <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
                                             <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledSheet.php">Rolled Sheet Schedule</a>
