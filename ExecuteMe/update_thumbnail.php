@@ -25,12 +25,7 @@
                        }
                      }
                    }
-                if(strlen($row["Part_Number"])==2){
-                    $stmt = $conn->prepare("UPDATE $tablename SET Thumbnail = ? WHERE Part_Number = ?;");
-                    $stmt->bind_param("ss",$Thumbnail, $row['Part_Number']);
-                    $Thumbnail = $row['Part_Number'];
-                    $stmt->execute();
-                }elseif ($row['Part_Number']=="PACKAGING") {
+                if ($row['Part_Number']=="PACKAGING") {
                     $stmt = $conn->prepare("UPDATE $tablename SET Thumbnail = ? WHERE Part_Number = ?;");
                     $stmt->bind_param("ss",$Packaging,$row['Part_Number']);
                     $Packaging = "PACKAGING";
@@ -38,13 +33,13 @@
                 }
             }
         }
-    }/*
-    table("Job_Schedule");
+    }
+    table("Job_Schedule");/*
     table('2D_Laser_Schedule');
     table("Brake_Baltec_Schedule");
     table("Rolled_Sheet_Schedule");
-    table('Spacegear_Schedule');*/
-    table("Stamping_Schedule");/*
+    table('Spacegear_Schedule');
+    table("Stamping_Schedule");
     table("Tooling_Parts_Schedule");
     table("Tooling_Schedule");
     table("Tube_Bender_Schedule");
