@@ -4,7 +4,7 @@ include_once('../routes/Stamping_Schedule.php');
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta name='author' content='Technique Inc. Customer Job Schedule, Developer: Nathan Creger'/>
+    <meta name='author' content='Technique Inc. Stamping Job Schedule, Developer: Nathan Creger'/>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=yes'>
     <title>Stamping Job Schedule</title>
