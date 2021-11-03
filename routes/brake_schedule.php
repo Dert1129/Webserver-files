@@ -28,8 +28,8 @@ function Brake(){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Master_Job_Number'];
                 $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }else{
-                $job = $row['Job_number'];
-                $Masterjob = $row['Master_Job_Number'];
+                $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
+                $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
             }
             echo "<tr>";
             if($date < $current_date){

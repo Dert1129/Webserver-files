@@ -12,14 +12,24 @@ function Rolled_Sheet_Schedule(){
             $pastYear = $year - 1;
             $path = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
             $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            $MasterPath = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Master_Job_Number'];
+            $altMasterPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Master_Job_Number'];
             if(is_dir($path)){
                 $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }elseif(is_dir($altPath)){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+            }elseif(is_dir($MasterPath)){
+                $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Master_Job_Number'];
+                $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
+            }
+            elseif(is_dir($altMasterPath)){
+                $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Master_Job_Number'];
+                $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }else{
-                $job = $row['Job_number'];
+                $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
+                $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
             echo "<tr>";
             if($date < $current_date){
@@ -44,7 +54,7 @@ function Rolled_Sheet_Schedule(){
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Customer']."</td>";  
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Part_Number']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Qty_To_Make']."</td>";
-            echo "<td class='col-1 $text' style='height:8rem'>".$row['Master_Job_Number']. "</td>";
+            echo "<td class='col-1 $text' style='height:8rem'>".$Masterjob. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Qty_Left']. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Type']. "</td>";
         }

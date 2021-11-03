@@ -19,7 +19,7 @@ function weld(){
                 $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_Number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_Number'] . " </a> </td>";
             }else{
-                $job = $row['Job_Number'];
+                $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
             echo "<tr>";
             if($date < $current_date){
