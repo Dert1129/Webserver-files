@@ -16,4 +16,8 @@ How to fix dead links:
         Fix:
             All customer names in the file system MUST be named the exact same as they are in E2. This comes with a catch. Inside of Schemas\pick_a_file.sql I have a large list of many sql queries that change the E2 names to the names in the filesystem. Depending on how this site is used looking forward, you can delete those lines and this will effect any previous jobs from 2021. THISS WILL KILL ALL LINKS THAT CURRENTLY WORK FOR THE 2021 FOLDER. So think about this before deleting all of those lines.
 
-            
+    Number 3:
+        The folder cannot be found because the folder doesn't exist. This is the case with a majority (if not all) Tooling Jobs/Job Numbers.
+
+        Fix:
+            Auto Generation of all folders with a template so the website can find the folders within the filesystem
