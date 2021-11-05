@@ -5,16 +5,17 @@ function Customer_Schedule($Filename){
     $mysql_user = "root";
     $mysql_password = "";
     $db = new PDO("mysql:host=$mysql_host;dbname=$mysql_database", $mysql_user, $mysql_password);
-        $sql = file_get_contents("//tiws07/dwg/Mfg Mtg/Nathan/Webserver Files/Schemas/".$Filename);
-        $stmt = $db->prepare($sql);
-        if($stmt->execute()){
-            echo "Success\n";
+    $dir = '//tiws07/dwg/Mfg Mtg/Customer Schedule/'.$FileName;
+        if (!file_exists($dir)){
+            echo $FileName." Does not exist in current directory";
         }else{
-            echo "Failed\n";
-        }
-        $dir = '//tiws07/dwg/Mfg Mtg/Nathan/Webserver files/';
-        if ( !file_exists($dir) ) {
-            mkdir ($dir, 0744);
+            $sql = file_get_contents("//tiws07/dwg/Mfg Mtg/Nathan/Webserver Files/Schemas/".$Filename);
+            $stmt = $db->prepare($sql);
+            if($stmt->execute()){
+                echo "Success\n";
+            }else{
+                echo "Failed\n";
+            }
         }
     }
     Customer_Schedule("Do everything Script.sql");/*
