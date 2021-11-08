@@ -19,7 +19,7 @@ function Customer_Schedule($Filename){
         }
     }
     Customer_Schedule("Do everything Script.sql");
-    Customer_Schedule("Brake & Baltec.sql");
+    Customer_Schedule("Brake & Baltec.sql");/*
     Customer_Schedule("2D_Laser_Schedule.sql");
     Customer_Schedule("Rolled_Sheet_Schedule.sql");
     Customer_Schedule("Spacegear_schedule.sql");
@@ -28,7 +28,7 @@ function Customer_Schedule($Filename){
     Customer_Schedule("Tooling_Schedule.sql");
     Customer_Schedule("Tube_Bender_Schedule.sql");
     Customer_Schedule("Tube_Laser_Schedule.sql");
-    Customer_Schedule("WeldAssy_Schedule.sql");
+    Customer_Schedule("WeldAssy_Schedule.sql");*/
     date_default_timezone_set("America/Detroit");
     file_put_contents ('//tiws07/dwg/Mfg Mtg/Nathan/Webserver Files/update.html', '<link href="./Style and cleanup/txtstyle.css" rel="stylesheet" type="text/css" />'."\n"."Last Updated: ".date("Y-m-d")." at ".date("g:iA"));
     echo "Updated Timestamp";
