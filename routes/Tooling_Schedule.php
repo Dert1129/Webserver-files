@@ -10,14 +10,16 @@ function Tooling(){
             $current_date = date("Y-m-d");
             $year = date("Y");
             $pastYear = $year - 1;
-            $path = '//tiws07/dwg/Customer/'.$year . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
-            $altPath = '//tiws07/dwg/Customer/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$row['Job_number'];
+            $job_Number = substr($row['Job_number'], 0, strpos($row['Job_number'], "-"));
+            $Customer = preg_replace('/\s+/', '%20', $row['Customer']);
+            $path = '//tiws07/dwg/Customer Files/'.$year . '/' . $row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
+            $altPath = '//tiws07/dwg/Customer Files/'.$pastYear . '/' . $row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
             if(is_dir($path)){
-                $directory = "file://///tiws07/dwg/Customer/".$year."/".$row['Customer']. "/Jobs/". $row['Job_number'];
+                $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }elseif(is_dir($altPath)){
-                $directory = "file://///tiws07/dwg/Customer/".$pastYear."/".$row['Customer']. "/Jobs/". $row['Job_number'];
-                $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
+                $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>"; 
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
