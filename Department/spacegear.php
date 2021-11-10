@@ -4,6 +4,9 @@ include_once('../routes/Spacegear_schedule.php');
 <!DOCTYPE html>
 <html lang='en'>
 <head>
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <meta name='author' content='Technique Inc. SpaceGear Job Schedule, Developer: Nathan Creger'/>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=yes'>
