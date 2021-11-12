@@ -18,8 +18,8 @@ function Customer_Schedule($Filename){
             }
         }
     }
-    Customer_Schedule("Do everything Script.sql");
-    Customer_Schedule("Brake & Baltec.sql");/*
+    Customer_Schedule("Do everything Script.sql");/*
+    Customer_Schedule("Brake & Baltec.sql");
     Customer_Schedule("2D_Laser_Schedule.sql");
     Customer_Schedule("Rolled_Sheet_Schedule.sql");
     Customer_Schedule("Spacegear_schedule.sql");
