@@ -33,7 +33,7 @@ include_once('../routes/Tooling_Parts_Schedule.php');
                         <iframe class='ml-auto' src='../update.html' width='300px' height='100px' frameborder=0></iframe>
                     </div>
                     <div class='row'>
-                        <div class='display-4 mx-auto'>Tooling Parts Schedule</div>
+                        <div class='display-4 mx-auto'>Machining Parts Schedule</div>
                     </div>
                     <div class='input-group mb-3 row mx-auto my-auto'>
                             <input type='text' class='form-control' placeholder='Search..' id='myInput'>

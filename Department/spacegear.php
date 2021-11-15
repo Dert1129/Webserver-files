@@ -33,7 +33,7 @@ include_once('../routes/Spacegear_schedule.php');
                         <iframe class='ml-auto' src='../update.html' width='300px' height='100px' frameborder=0></iframe>
                     </div>
                     <div class='row'>
-                        <div class='display-4 mx-auto'>Spacegear Schedule</div>
+                        <div class='display-4 mx-auto'>3D Laser Schedule</div>
                     </div>
                     <div class='input-group mb-3 row mx-auto my-auto'>
                             <input type='text' class='form-control' placeholder='Search..' id='myInput'>
