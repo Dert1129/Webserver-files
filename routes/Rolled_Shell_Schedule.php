@@ -1,5 +1,6 @@
 <?php 
 function Rolled_Sheet_Schedule(){
+    global $Masterjob;
     require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Rolled_Sheet_Schedule;");
     $stmt->execute();
@@ -24,15 +25,25 @@ function Rolled_Sheet_Schedule(){
                 $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }elseif(is_dir($masterPath)){
-                $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
-                $Masterjob = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
+                $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $Master_Job_Number."/".$row['Master_Job_Number'];
+                if(!isset($Masterjob)){
+                    $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
+                }
+                $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }
             elseif(is_dir($altMasterPath)){
                 $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $Master_Job_Number."/".$row['Master_Job_Number'];
+                if(!isset($Masterjob)){
+                    $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
+                }
                 $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
+                
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
-                $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
+                if(!isset($Masterjob)){
+                    $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
+                }
+                //$Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
             }
             echo "<tr>";
             if($date < $current_date){
@@ -46,7 +57,7 @@ function Rolled_Sheet_Schedule(){
                 echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
             }elseif($row['Thumbnail']=="No image available.png"){
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
-            }elseif($row['Part_Number']==' '){
+            }elseif($row['Part_Number']==''){
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/No image available.png' width='170px' height='112px'>". "</td>";
             }else{
                 echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
