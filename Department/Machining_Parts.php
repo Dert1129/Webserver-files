@@ -73,7 +73,7 @@ include_once('../routes/Machining_Parts_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Tooling_parts();
+                                        Machining_Parts_Schedule();
                                     ?>
                                 </tbody>
                             </table>

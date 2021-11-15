@@ -1,7 +1,7 @@
 <?php 
-function Bender(){
+function Tube_Bending(){
     require('../includes/dbh.inc.php');
-    $stmt = $conn->prepare("SELECT * FROM Tube_Bender_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM Tube_Bending_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){

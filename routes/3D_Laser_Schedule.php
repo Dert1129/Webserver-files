@@ -1,7 +1,7 @@
 <?php 
-function spacegear(){
+function _3D_Laser_Schedule(){
     require('../includes/dbh.inc.php');
-    $stmt = $conn->prepare("SELECT * FROM Spacegear_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM 3D_Laser_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){

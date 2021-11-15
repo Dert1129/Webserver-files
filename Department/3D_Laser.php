@@ -72,7 +72,7 @@ include_once('../routes/3D_Laser_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        spacegear();
+                                        _3D_Laser_Schedule();
                                     ?>
                                 </tbody>
                             </table>

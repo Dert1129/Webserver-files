@@ -74,7 +74,7 @@ include_once('../routes/Rolled_Shell_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Rolled_Sheet_Schedule();
+                                        Rolled_Shells_Schedule();
                                     ?>
                                 </tbody>
                             </table>

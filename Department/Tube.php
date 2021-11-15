@@ -73,7 +73,7 @@ include_once('../routes/Tube_Laser_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Tube();
+                                        Tube_Laser();
                                     ?>
                                 </tbody>
                             </table>

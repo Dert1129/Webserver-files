@@ -1,8 +1,8 @@
 <?php 
-function Rolled_Sheet_Schedule(){
+function Rolled_Shells_Schedule(){
     global $Masterjob;
     require('../includes/dbh.inc.php');
-    $stmt = $conn->prepare("SELECT * FROM Rolled_Sheet_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM Rolled_Shells_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){

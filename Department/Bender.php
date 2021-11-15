@@ -1,5 +1,5 @@
 <?php
-include_once('../routes/Tube_Bender_Schedule.php');
+include_once('../routes/Tube_Bending_Schedule.php');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -73,7 +73,7 @@ include_once('../routes/Tube_Bender_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Bender();
+                                        Tube_Bending();
                                     ?>
                                 </tbody>
                             </table>

@@ -1,7 +1,7 @@
 <?php 
-function Tooling_parts(){
+function Machining_parts(){
     require('../includes/dbh.inc.php');
-    $stmt = $conn->prepare("SELECT * FROM Tooling_Parts_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM Machining_Parts_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){

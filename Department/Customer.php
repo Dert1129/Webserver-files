@@ -80,7 +80,7 @@ include_once('../routes/Customer_Schedule.php');
                                 <tbody id='myTable'>
                                     <?php
                                         require('../includes/dbh.inc.php');
-                                        Home();
+                                        Customer_Schedule();
                                     ?>
                                 </tbody>
                             </table>

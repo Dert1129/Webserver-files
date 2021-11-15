@@ -1,7 +1,7 @@
 <?php 
-function Home(){
+function Customer(){
     require('../includes/dbh.inc.php');
-    $stmt = $conn->prepare("SELECT * FROM Job_Schedule;");
+    $stmt = $conn->prepare("SELECT * FROM Customer_Job_Schedule;");
     $stmt->execute();
     $result = $stmt->get_result(); 
     if ($result !==false){
