@@ -34,15 +34,15 @@
             }
         }
     }
-    table("Job_Schedule");/*
+    table("Customer_Job_Schedule");/*
     table('2D_Laser_Schedule');
-    table("Brake_Baltec_Schedule");
-    table("Rolled_Sheet_Schedule");
-    table('Spacegear_Schedule');
+    table("3D_Laser_Schedule");
+    table("Brake_baltech_Schedule");
+    table('Machining_Schedule');
+    table("Rolled_Shells_Schedule");
     table("Stamping_Schedule");
-    table("Tooling_Parts_Schedule");
     table("Tooling_Schedule");
-    table("Tube_Bender_Schedule");
+    table("Tube_Bending_Schedule");
     table('Tube_Laser_Schedule');
     table('WeldAssy_Schedule');*/
 ?>
