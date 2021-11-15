@@ -1,5 +1,5 @@
 <?php 
-function Customer(){
+function Customer_Schedule(){
     require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Customer_Job_Schedule;");
     $stmt->execute();
@@ -66,7 +66,7 @@ function Customer(){
 }
 function product_Codes(){
     include("../includes/dbh.inc.php");
-    $stmt = $conn->prepare("SELECT DISTINCT Product_Code FROM Job_Schedule ORDER BY Product_Code;");
+    $stmt = $conn->prepare("SELECT DISTINCT Product_Code FROM Customer_Job_Schedule ORDER BY Product_Code;");
     $stmt->execute();
     $result = $stmt->get_result();
     echo "<li>";

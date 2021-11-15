@@ -43,15 +43,15 @@ include_once('../routes/Tube_Laser_Schedule.php');
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Customer.php">Customer Job Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledSheet.php">Rolled Sheet Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/spacegear.php">Spacegear Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/3D_Laser.php">3D Laser Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/brake.php">Brake & Baltec Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Machining_Parts.php">Machining Parts Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledShells.php">Rolled Shell Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Stamping.php">Stamping Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling.php">Tooling Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tooling_parts.php">Tooling Parts Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/bender.php">Tube Bender Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Bending.php">Tube Bending Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Tube.php">Tube Laser Schedule</a>
-                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/weld.php">WeldAssy Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Weld.php">WeldAssy Schedule</a>
                                 </div>
                             </div>
                         </div>

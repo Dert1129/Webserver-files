@@ -1,5 +1,5 @@
 <?php 
-function Machining_parts(){
+function Machining_Parts_Schedule(){
     require('../includes/dbh.inc.php');
     $stmt = $conn->prepare("SELECT * FROM Machining_Parts_Schedule;");
     $stmt->execute();
