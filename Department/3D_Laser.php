@@ -1,5 +1,5 @@
 <?php
-include_once('../routes/RolledSheet_Schedule.php');
+include_once('../routes/3D_Laser_Schedule.php');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -7,10 +7,10 @@ include_once('../routes/RolledSheet_Schedule.php');
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-    <meta name='author' content='Technique Inc. Rolled Sheet Job Schedule, Developer: Nathan Creger'/>
+    <meta name='author' content='Technique Inc. SpaceGear Job Schedule, Developer: Nathan Creger'/>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=yes'>
-    <title>Rolled Sheet Job Schedule</title>
+    <title>Spacegear Schedule</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css' rel='stylesheet' />
@@ -33,7 +33,7 @@ include_once('../routes/RolledSheet_Schedule.php');
                         <iframe class='ml-auto' src='../update.html' width='300px' height='100px' frameborder=0></iframe>
                     </div>
                     <div class='row'>
-                        <div class='display-4 mx-auto'>Rolled Shell Schedule</div>
+                        <div class='display-4 mx-auto'>3D Laser Schedule</div>
                     </div>
                     <div class='input-group mb-3 row mx-auto my-auto'>
                             <input type='text' class='form-control' placeholder='Search..' id='myInput'>
@@ -58,23 +58,21 @@ include_once('../routes/RolledSheet_Schedule.php');
                         <div class='tableFixHead'>
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
-                                    <tr style='text-align: left header' id='Headers'> 
-                                        <th class="col-2">Thumbnail</th>  
-                                        <th class='col-1'>Technician</th>
+                                    <tr style='text-align: left header' id='Headers'>
+                                        <th class='col-2'>Thumbnail</th>
+                                        <th class='col-1'>Customer</th>   
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
-                                        <th class='col-1'>Customer</th>
                                         <th class='col-1'>Part Number</th>
-                                        <th class="col-1">Qty To Make</th>
-                                        <th class='col-1'>Master Job Number</th>
-                                        <th class='col-1'>Qty Left</th>
-                                        <th class='col-1'>Type</th>
+                                        <th class='col-1'>Status</th>
+                                        <th class='col-1'>Revision</th>
+                                        <th class='col-1'>Quantity</th>
                                     </tr>
                                 </thead>
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Rolled_Sheet_Schedule();
+                                        spacegear();
                                     ?>
                                 </tbody>
                             </table>
@@ -139,8 +137,8 @@ include_once('../routes/RolledSheet_Schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Tolled Sheet Scheudle',
-                filename: 'Rolled_Sheet_Schedule.xls',
+                name: 'SpaceGear Schedule',
+                filename: 'SpaceGear_Schedule.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

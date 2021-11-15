@@ -13,7 +13,8 @@ LOAD DATA INFILE "WeldDept-JobsDueList.csv"
 INTO TABLE WeldAssy_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
-LINES TERMINATED BY "\r\n";
+LINES TERMINATED BY "\r\n"
+IGNORE 1 ROWS;
 
 DELETE FROM WeldAssy_Schedule
 WHERE Job_Number = "";

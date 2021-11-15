@@ -1,5 +1,5 @@
 <?php
-include_once('../routes/Tube_schedule.php');
+include_once('../routes/Tube_Laser_Schedule.php');
 ?>
 <!DOCTYPE html>
 <html lang='en'>

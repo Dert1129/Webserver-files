@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS Rolled_Sheet_Schedule;
-CREATE TABLE Rolled_Sheet_Schedule(
+DROP TABLE IF EXISTS Rolled_Shells_Schedule;
+CREATE TABLE Rolled_Shells_Schedule(
     Technician varchar(50),
     Job_number varchar(50),
     Due_Date date,
@@ -12,22 +12,22 @@ CREATE TABLE Rolled_Sheet_Schedule(
 );
 
 LOAD DATA INFILE "Rolled Shells_Schedule.csv"
-INTO TABLE Rolled_Sheet_Schedule
+INTO TABLE Rolled_Shells_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n";
 
-DELETE FROM Rolled_Sheet_Schedule WHERE Job_number = "";
+DELETE FROM Rolled_Shells_Schedule WHERE Job_number = "";
 
-alter table Rolled_Sheet_Schedule
+alter table Rolled_Shells_Schedule
 add Thumbnail text;
 
-UPDATE Rolled_Sheet_Schedule
+UPDATE Rolled_Shells_Schedule
 SET Part_Number = replace(Part_Number,"/","");
 
-UPDATE Rolled_Sheet_Schedule
+UPDATE Rolled_Shells_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
-UPDATE Rolled_Sheet_Schedule
+UPDATE Rolled_Shells_Schedule
 SET Customer = replace(Customer,".","");

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS Tube_Bender_Schedule;
-CREATE TABLE Tube_Bender_Schedule(
+DROP TABLE IF EXISTS Tube_Bending_Schedule_Schedule;
+CREATE TABLE Tube_Bending_Schedule_Schedule(
     Job_number varchar(50),
     Due_Date date,
     Customer varchar(50),
@@ -11,25 +11,25 @@ CREATE TABLE Tube_Bender_Schedule(
 );
 
 LOAD DATA INFILE "Bender_Schedule.csv"
-INTO TABLE Tube_Bender_Schedule
+INTO TABLE Tube_Bending_Schedule_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n";
 
-DELETE FROM Tube_Bender_Schedule WHERE Due_Date = "";
+DELETE FROM Tube_Bending_Schedule_Schedule WHERE Due_Date = "";
 
-alter table Tube_Bender_Schedule
+alter table Tube_Bending_Schedule_Schedule
 add Thumbnail text;
 
-DELETE FROM Tube_Bender_Schedule
+DELETE FROM Tube_Bending_Schedule_Schedule
 WHERE Job_Number = "";
 
-UPDATE Tube_Bender_Schedule
+UPDATE Tube_Bending_Schedule_Schedule
 SET Part_Number = replace(Part_Number,"/","");
 
-UPDATE Tube_Bender_Schedule
+UPDATE Tube_Bending_Schedule_Schedule
 SET Thumbnail = "No image available.png"
 WHERE Thumbnail IS NULL;
 
-UPDATE Tube_Bender_Schedule
+UPDATE Tube_Bending_Schedule_Schedule
 SET Customer = replace(Customer,".","");

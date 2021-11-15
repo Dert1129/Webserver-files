@@ -1,5 +1,5 @@
 <?php
-include_once('../routes/Tooling_Parts_Schedule.php');
+include_once('../routes/Rolled_Shell_Schedule.php');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -7,10 +7,10 @@ include_once('../routes/Tooling_Parts_Schedule.php');
     <meta http-equiv='cache-control' content='no-cache'>
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-    <meta name='author' content='Technique Inc. Tooling Parts Job Schedule, Developer: Nathan Creger'/>
+    <meta name='author' content='Technique Inc. Rolled Sheet Job Schedule, Developer: Nathan Creger'/>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=yes'>
-    <title>Tooling Parts Schedule</title>
+    <title>Rolled Sheet Job Schedule</title>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css' rel='stylesheet' />
@@ -33,7 +33,7 @@ include_once('../routes/Tooling_Parts_Schedule.php');
                         <iframe class='ml-auto' src='../update.html' width='300px' height='100px' frameborder=0></iframe>
                     </div>
                     <div class='row'>
-                        <div class='display-4 mx-auto'>Machining Parts Schedule</div>
+                        <div class='display-4 mx-auto'>Rolled Shell Schedule</div>
                     </div>
                     <div class='input-group mb-3 row mx-auto my-auto'>
                             <input type='text' class='form-control' placeholder='Search..' id='myInput'>
@@ -41,7 +41,7 @@ include_once('../routes/Tooling_Parts_Schedule.php');
                             <div class='input-group-btn dropdown'>
                                 <button id='dd' type='button' class='btn btn-outline-dark dropdown-toggle font-weight-bold' data-toggle='dropdown' aria-haspopup='true'aria-expanded='true'>Schedules<span class='caret'></span></button>
                                 <div class='dropdown-menu checkbox-menu allow-focus' aria-labelledby='dd'>
-                                    <a class="dropdown-item" href="http://195.100.202.209:808/Department/Customer.php0">Customer Job Schedule</a>
+                                    <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Customer.php">Customer Job Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/2D_Laser.php">2D Laser Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/Brake.php">Brake & Baltec Schedule</a>
                                     <a class="dropdown-item" href="http://195.100.202.209:8080/Department/RolledSheet.php">Rolled Sheet Schedule</a>
@@ -58,22 +58,23 @@ include_once('../routes/Tooling_Parts_Schedule.php');
                         <div class='tableFixHead'>
                             <table id='sortTable' class='table2excel table table-striped tablesorter table-sm'>
                                 <thead>
-                                    <tr style='text-align: left header' id='Headers'>
-                                        <th class='col-2'>Thumbnail</th>
-                                        <th class='col-1'>Customer</th>   
+                                    <tr style='text-align: left header' id='Headers'> 
+                                        <th class="col-2">Thumbnail</th>  
+                                        <th class='col-1'>Technician</th>
                                         <th class='col-1'>Job Number</th>
                                         <th class='col-1'>Due Date</th>
+                                        <th class='col-1'>Customer</th>
                                         <th class='col-1'>Part Number</th>
-                                        <th class='col-1'>Quantity Ordered</th>
-                                        <th class='col-1'>Quantity Open</th>
-                                        <th class='col-1'>Done</th>
-                                        <th class='col-1'>Work Center</th>
+                                        <th class="col-1">Qty To Make</th>
+                                        <th class='col-1'>Master Job Number</th>
+                                        <th class='col-1'>Qty Left</th>
+                                        <th class='col-1'>Type</th>
                                     </tr>
                                 </thead>
                                 <tbody id='myTable'>
                                     <?php
                                         include_once('../includes/dbh.inc.php');
-                                        Tooling_parts();
+                                        Rolled_Sheet_Schedule();
                                     ?>
                                 </tbody>
                             </table>
@@ -138,8 +139,8 @@ include_once('../routes/Tooling_Parts_Schedule.php');
     $(document).ready(function(){
         $('#export').on('click',function(){
             $('.table2excel').table2excel({
-                name: 'Tooling Parts Schedule',
-                filename: 'Tooling_Parts_Schedule.xls',
+                name: 'Tolled Sheet Scheudle',
+                filename: 'Rolled_Sheet_Schedule.xls',
                 preserveColors: true,
                 exclude_links: false,
                 exclude_img: true

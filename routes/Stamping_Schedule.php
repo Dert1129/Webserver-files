@@ -12,7 +12,7 @@ function stamping(){
             $pastYear = $year - 1;
             $job_Number = substr($row['Job_number'], 0, strpos($row['Job_number'], "-"));
             $Customer = preg_replace('/\s+/', '%20', $row['Customer']);
-            $Master_Job_Number = substr($row['Master_Job_number'], 0, strpos($row['Master_Job_Number'], "-"));
+            $Master_Job_Number = substr($row['Master_Job_Number'], 0, strpos($row['Master_Job_Number'], "-"));
             $path = '//tiws07/dwg/Customer Files/'.$year.'/'.$row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
             $altPath = '//tiws07/dwg/Customer Files/'.$pastYear.'/'. $row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
             $masterPath = '//tiws07/dwg/Customer Files/'.$year.'/'. $row['Customer'].'/Jobs/'.$Master_Job_Number."/".$row['Master_Job_Number'];
