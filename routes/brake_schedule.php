@@ -9,6 +9,7 @@ function Brake(){
             $date = date_format(new DateTime($row["Due_Date"]), "Y-m-d");
             $current_date = date("Y-m-d");
             $year = date("Y");
+            $Masterjob = "";
             $pastYear = $year - 1;
             $job_Number = substr($row['Job_number'], 0, strpos($row['Job_number'], "-"));
             $Customer = preg_replace('/\s+/', '%20', $row['Customer']);
@@ -44,6 +45,8 @@ function Brake(){
                 echo "<td class='col-2 $text' style='height:8rem'>".$row['Thumbnail']."</td>";
             }elseif ($row['Part_Number']=="PACKAGING") {
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
+            }elseif($row["Product_Code"]=="PITPRODUCTS\r"){
+                echo "<td class='col-2'>". "<img class='lozad' data-src='../Thumbnails/Stock Images/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             }elseif($row['Thumbnail']=="No image available.png"){
                 echo "<td class='col-2'>". "<img class='lozad' id='Thumbnail' data-src='../Thumbnails/".$row['Thumbnail']."' width='170px' height='112px'>". "</td>";
             }elseif($row['Part_Number']==' '){

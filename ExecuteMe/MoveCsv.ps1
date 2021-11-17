@@ -10,21 +10,23 @@ Function MoveCsv($FileName){
 }
 $FileName = "Job Schedule Details"
 MoveCsv -File $FileName
-#$FileName = "TubeLaser_Schedule"
-#MoveCsv -File $FileName
-#$FileName = "Tooling_TLs_Schedule"
-#MoveCsv -File $FileName
-#$FileName = "Tooling_Parts_Schedule"
-#MoveCsv -File $FileName
-#$FileName = "Stamping_Schedule"
-#MoveCsv -File $FileName
-#$FileName = "Rolled Shells_Schedule"
-#MoveCsv -File $FileName
-#$FileName = "Job Schedule Details"
-#MoveCsv -File $FileName
-#$FileName = "Job Schedule Details"
-#MoveCsv -File $FileName
-#$FileName = "Job Schedule Details"
-#MoveCsv -File $FileName
-#$FileName = "Job Schedule Details"
-#MoveCsv -File $FileName
+$FileName = "TubeLaser_Schedule"
+MoveCsv -File $FileName
+$FileName = "Tooling_TLs_Schedule"
+MoveCsv -File $FileName
+$FileName = "Tooling_Parts_Schedule"
+MoveCsv -File $FileName
+$FileName = "Stamping_Schedule"
+MoveCsv -File $FileName
+$FileName = "SpaceGear_Schedule"
+MoveCsv -File $FileName
+$FileName = "Brake_Baltec_Schedule"
+MoveCsv -File $FileName
+$FileName = "Bender_Schedule"
+MoveCsv -File $FileName
+$FileName = "2D_Laser_Schedule"
+MoveCsv -File $FileName
+$FileName = "WeldDept-JobsDueList"
+MoveCsv -File $FileName
+$FileName = "Rolled Shells_Schedule"
+MoveCsv -File $FileName
