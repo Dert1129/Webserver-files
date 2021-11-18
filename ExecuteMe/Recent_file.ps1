@@ -23,7 +23,7 @@ Function ExcelToCsv () {
         }
         $Excel.Quit()
     }else{
-        Write-Output "File doesn't exist, cannot copy"
+        Write-Output "Failed to cooy the file"
     }
 }
 #Start-Process Powershell -Verb runAs
