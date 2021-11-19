@@ -12,24 +12,14 @@ function Tube_Laser(){
             $pastYear = $year - 1;
             $job_Number = substr($row['Job_number'], 0, strpos($row['Job_number'], "-"));
             $Customer = preg_replace('/\s+/', '%20', $row['Customer']);
-            $Master_Job_Number = substr($row['Master_Job_Number'], 0, strpos($row['Master_Job_Number'], "-"));
             $path = '//tiws07/dwg/Customer Files/'.$year.'/'.$row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
             $altPath = '//tiws07/dwg/Customer Files/'.$pastYear.'/'. $row['Customer'].'/Jobs/'.$job_Number."/".$row['Job_number'];
-            $masterPath = '//tiws07/dwg/Customer Files/'.$year.'/'. $row['Customer'].'/Jobs/'.$Master_Job_Number."/".$row['Master_Job_Number'];
-            $altMasterPath = '//tiws07/dwg/Customer Files/'.$pastYear.'/'. $row['Customer'].'/Jobs/'.$Master_Job_Number."/".$row['Master_Job_Number'];
             if(is_dir($path)){
                 $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
             }elseif(is_dir($altPath)){
                 $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }elseif(is_dir($masterPath)){
-                $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
-                $Masterjob = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }
-            elseif(is_dir($altMasterPath)){
-                $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $Master_Job_Number."/".$row['Master_Job_Number'];
-                $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
             }
@@ -57,7 +47,7 @@ function Tube_Laser(){
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Customer']. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Part_Number']."</td>";  
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Status']."</td>";
-            echo "<td class='col-1 $text' style='height:8rem'>".$Masterjob."</td>";
+            echo "<td class='col-1 $text' style='height:8rem'>".$row['Master_Job_Number']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Qty']. "</td>";
         }
     }else{
