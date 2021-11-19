@@ -23,16 +23,8 @@ function stamping(){
             }elseif(is_dir($altPath)){
                 $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
                 $job = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }elseif(is_dir($masterPath)){
-                $directory = "file://///tiws07/dwg/Customer%20Files/".$year."/".$Customer. "/Jobs/". $job_Number."/".$row['Job_number'];
-                $Masterjob = "<a href=\"$directory"."\"> " . $row['Job_number'] . " </a> </td>";
-            }
-            elseif(is_dir($altMasterPath)){
-                $directory = "file://///tiws07/dwg/Customer%20Files/".$pastYear."/".$Customer. "/Jobs/". $Master_Job_Number."/".$row['Master_Job_Number'];
-                $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
-                $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
             }
             echo "<tr>";
             if($date < $current_date){
@@ -58,7 +50,7 @@ function stamping(){
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Customer']. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Part_Number']."</td>";  
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Qty_To_Make']."</td>";
-            echo "<td class='col-1 $text' style='height:8rem'>".$Masterjob."</td>";
+            echo "<td class='col-1 $text' style='height:8rem'>".$row['Master_Job_Number']."</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Qty_Left']. "</td>";
             echo "<td class='col-1 $text' style='height:8rem'>".$row['Type']. "</td>";
         }

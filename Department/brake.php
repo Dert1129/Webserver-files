@@ -132,7 +132,7 @@ include_once('../routes/brake_schedule.php');
         	$('#myTable tr').show()
         });
     });
-    const observer.lozad();
+    const observer = lozad();
     observer.observe();
     $(document).ready(function(){
         $('#export').on('click',function(){

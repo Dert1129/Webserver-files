@@ -32,7 +32,6 @@ function Tube_Laser(){
                 $Masterjob = "<a href=\"$directory"."\"> " . $row['Master_Job_Number'] . " </a> </td>";
             }else{
                 $job = "Directory Not Yet Available <br> <br>".$row['Job_number'];
-                $Masterjob = "Directory Not Yet Available <br> <br>".$row['Master_Job_Number'];
             }
             echo "<tr>";
             if($date < $current_date){
