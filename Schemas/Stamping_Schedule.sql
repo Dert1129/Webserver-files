@@ -11,7 +11,7 @@ CREATE TABLE Stamping_Schedule(
     Type varchar(50)
 );
 
-LOAD DATA INFILE "Job Schedule Detail -Stamping.csv"
+LOAD DATA INFILE "Stamping_Schedule.csv"
 INTO TABLE Stamping_Schedule
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
